@@ -785,12 +785,18 @@ body {
 
     text-align: center;
 
-    background:
-        linear-gradient(
-            145deg,
-            #fffaf0,
-            #f4ead7
-        );
+background:
+    linear-gradient(
+        to bottom,
+        rgba(255, 250, 240, 0.94) 0%,
+        rgba(248, 239, 220, 0.82) 42%,
+        rgba(232, 215, 181, 0.58) 100%
+    ),
+    url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=85");
+
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
 
     color: #29251f;
 
@@ -1137,6 +1143,76 @@ body {
 
 }
 
+.couple-photo-bg {
+    z-index: 0;
+}
+
+.luxury-frame {
+    z-index: 6;
+}
+
+.frame-glow {
+    z-index: 7;
+}
+
+/* .couple-photo-bg {
+    z-index: 0;
+}
+
+.luxury-frame,
+.frame-glow,
+.card-corner,
+.card-ornament,
+.card-bismillah,
+.card-label,
+.card-request,
+.card-couple,
+.card-date,
+.card-nikah,
+.luxury-open-btn,
+.card-hint,
+.card-bottom-ornament {
+    position: relative;
+    z-index: 5;
+} */
+
+/* =========================================================
+   COUPLE PHOTO — BOTTOM OF INVITATION CARD
+========================================================= */
+
+.couple-photo-bg {
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 48%;
+
+    z-index: 0;
+
+    background-image:
+        linear-gradient(
+            to bottom,
+            rgba(248, 245, 239, 1) 0%,
+            rgba(248, 245, 239, 0.92) 14%,
+            rgba(248, 245, 239, 0.55) 35%,
+            rgba(248, 245, 239, 0.18) 65%,
+            rgba(248, 245, 239, 0.05) 100%
+        ),
+        url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=85");
+
+    background-size: cover;
+
+    background-position: center 35%;
+
+    background-repeat: no-repeat;
+
+    opacity: 0.9;
+
+    pointer-events: none;
+}
 
 /* =========================================================
    CARD CORNERS
@@ -4150,4 +4226,905 @@ footer .copyright {
         padding:
             30px 10px 20px;
     }
+}
+
+/* =========================================================
+   STEP 3 — LUXURY COUNTDOWN
+========================================================= */
+
+.countdown-section {
+
+    position: relative;
+
+    min-height: 75vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f8f5ef,
+            #eee6d7
+        );
+
+    color: var(--dark);
+}
+
+
+/* =========================================================
+   DECORATION
+========================================================= */
+
+.countdown-decoration {
+
+    color: var(--gold);
+
+    font-size: 18px;
+
+    margin-bottom: 20px;
+
+    animation:
+        countdownSpark
+        3s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes countdownSpark {
+
+    0%,
+    100% {
+
+        opacity: 0.45;
+
+        transform:
+            scale(0.85);
+
+    }
+
+    50% {
+
+        opacity: 1;
+
+        transform:
+            scale(1.2);
+
+    }
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.countdown-section .section-label {
+
+    margin-bottom: 12px;
+
+    color: #a78343;
+
+    font-size: 9px;
+
+    letter-spacing: 4px;
+
+}
+
+
+.countdown-section h2 {
+
+    font-family: var(--serif);
+
+    font-size:
+        clamp(
+            45px,
+            6vw,
+            70px
+        );
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    color: #29251f;
+
+    margin: 0;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.countdown-intro {
+
+    max-width: 500px;
+
+    margin:
+        22px auto 25px;
+
+    font-family: var(--serif);
+
+    font-size: 18px;
+
+    font-style: italic;
+
+    line-height: 1.6;
+
+    color: #756f64;
+}
+
+
+/* =========================================================
+   DATE
+========================================================= */
+
+.countdown-date {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 14px;
+
+    padding:
+        10px 25px;
+
+    margin-bottom: 35px;
+
+    border-top:
+        1px solid
+        rgba(182,146,77,0.45);
+
+    border-bottom:
+        1px solid
+        rgba(182,146,77,0.45);
+}
+
+
+.countdown-date > span {
+
+    font-family: var(--serif);
+
+    font-size: 43px;
+
+    line-height: 1;
+
+    color: #a47c38;
+}
+
+
+.countdown-date div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+}
+
+
+.countdown-date strong {
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    color: #4d473d;
+}
+
+
+.countdown-date small {
+
+    margin-top: 3px;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    color: #958a77;
+}
+
+
+/* =========================================================
+   COUNTDOWN GRID
+========================================================= */
+
+.countdown {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 18px;
+
+    flex-wrap: wrap;
+
+    margin: 0;
+}
+
+
+/* =========================================================
+   COUNTDOWN BOX
+========================================================= */
+
+.countdown .count-box {
+
+    width: 120px;
+
+    height: 120px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: relative;
+
+    background:
+        rgba(255,255,255,0.75);
+
+    border:
+        1px solid
+        rgba(182,146,77,0.35);
+
+    box-shadow:
+        0 15px 35px
+        rgba(41,37,31,0.06);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.countdown .count-box::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 5px;
+
+    border:
+        1px solid
+        rgba(182,146,77,0.16);
+
+    pointer-events: none;
+}
+
+
+.countdown .count-box:hover {
+
+    transform:
+        translateY(-7px);
+
+    box-shadow:
+        0 20px 40px
+        rgba(41,37,31,0.12);
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.countdown .count-box span {
+
+    font-family: var(--serif);
+
+    font-size: 48px;
+
+    line-height: 1;
+
+    color: #a47c38;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.countdown .count-box small {
+
+    margin-top: 8px;
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+
+    color: #756f64;
+}
+
+
+/* =========================================================
+   BOTTOM TEXT
+========================================================= */
+
+.countdown-bottom {
+
+    margin-top: 35px;
+
+    font-family: var(--serif);
+
+    font-size: 17px;
+
+    font-style: italic;
+
+    color: #8c806d;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .countdown-section {
+
+        min-height: auto;
+
+        padding:
+            80px 20px;
+    }
+
+
+    .countdown-section h2 {
+
+        font-size: 45px;
+    }
+
+
+    .countdown-intro {
+
+        font-size: 16px;
+
+        max-width: 330px;
+    }
+
+
+    .countdown-date {
+
+        margin-bottom: 28px;
+
+        padding:
+            9px 20px;
+    }
+
+
+    .countdown {
+
+        gap: 10px;
+
+        max-width: 320px;
+    }
+
+
+    .countdown .count-box {
+
+        width: 135px;
+
+        height: 105px;
+    }
+
+
+    .countdown .count-box span {
+
+        font-size: 40px;
+    }
+
+
+    .countdown-bottom {
+
+        margin-top: 28px;
+    }
+
+}
+
+/* =========================================================
+   MOBILE OPENING CARD — FINAL RESPONSIVE FIX
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .opening-screen {
+        padding: 10px;
+
+        /* Prevent the opening card from creating page overflow */
+        overflow: hidden;
+    }
+
+
+    /* Outer decorative frame */
+
+    .outer-invitation-frame {
+
+        width: 94vw;
+
+        height: 94svh;
+
+        max-height: 94svh;
+    }
+
+
+    /* Main invitation card */
+
+    .invitation-card {
+
+        width: min(88vw, 370px);
+
+        min-height: auto;
+
+        height: auto;
+
+        max-height: 90svh;
+
+        padding:
+            38px 22px;
+
+        overflow: hidden;
+    }
+
+
+    /* Inner frame */
+
+    .luxury-frame {
+
+        inset: 7px;
+    }
+
+
+    .invitation-card::before {
+
+        inset: 10px;
+    }
+
+
+    /* Decorative corners */
+
+    .card-corner {
+
+        width: 32px;
+
+        height: 32px;
+    }
+
+
+    .card-corner.top-left,
+    .card-corner.top-right {
+
+        top: 18px;
+    }
+
+
+    .card-corner.bottom-left,
+    .card-corner.bottom-right {
+
+        bottom: 18px;
+    }
+
+
+    .card-corner.top-left,
+    .card-corner.bottom-left {
+
+        left: 18px;
+    }
+
+
+    .card-corner.top-right,
+    .card-corner.bottom-right {
+
+        right: 18px;
+    }
+
+
+    /* Top ornament */
+
+    .card-ornament {
+
+        margin-bottom: 14px;
+
+        font-size: 10px;
+    }
+
+
+    /* Bismillah */
+
+    .card-bismillah {
+
+        font-size: 18px;
+
+        margin-bottom: 15px;
+    }
+
+
+    /* Invitation label */
+
+    .card-label {
+
+        font-size: 7px;
+
+        letter-spacing: 2.5px;
+
+        margin-bottom: 10px;
+    }
+
+
+    /* Invitation sentence */
+
+    .card-request {
+
+        max-width: 260px;
+
+        font-size: 13px;
+
+        line-height: 1.45;
+    }
+
+
+    /* Couple names */
+
+    .card-couple {
+
+        margin:
+            17px 0 14px;
+    }
+
+
+    .card-couple h1 {
+
+        font-size: clamp(
+            44px,
+            14vw,
+            58px
+        );
+
+        line-height: .8;
+    }
+
+
+    /* Ampersand */
+
+    .card-and {
+
+        margin:
+            13px 0;
+    }
+
+
+    .card-and span {
+
+        width: 30px;
+    }
+
+
+    .card-and b {
+
+        font-size: 22px;
+    }
+
+
+    /* Date */
+
+    .card-date {
+
+        padding:
+            7px 16px;
+
+        gap: 10px;
+    }
+
+
+    .card-date > span {
+
+        font-size: 34px;
+    }
+
+
+    .card-date strong {
+
+        font-size: 8px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .card-date small {
+
+        font-size: 7px;
+
+        letter-spacing: 1.5px;
+    }
+
+
+    /* Event type */
+
+    .card-nikah {
+
+        margin-top: 12px;
+
+        font-size: 6px;
+
+        letter-spacing: 1.5px;
+    }
+
+
+    /* Open button */
+
+    .luxury-open-btn {
+
+        min-width: 185px;
+
+        margin-top: 20px;
+
+        padding:
+            13px 18px;
+
+        font-size: 8px;
+
+        letter-spacing: 2px;
+    }
+
+
+    /* Button hint */
+
+    .card-hint {
+
+        margin-top: 8px;
+
+        font-size: 6px;
+    }
+
+
+    /* Bottom ornament */
+
+    .card-bottom-ornament {
+
+        bottom: 18px;
+
+        font-size: 10px;
+    }
+}
+
+/* =========================================================
+   VERY SMALL PHONES — 360px AND BELOW
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .opening-screen {
+        padding: 7px;
+    }
+
+
+    .outer-invitation-frame {
+
+        width: 96vw;
+
+        height: 95svh;
+
+        max-height: 95svh;
+    }
+
+
+    .invitation-card {
+
+        width: 89vw;
+
+        max-height: 91svh;
+
+        padding:
+            30px 18px;
+    }
+
+
+    .card-bismillah {
+
+        font-size: 16px;
+
+        margin-bottom: 12px;
+    }
+
+
+    .card-request {
+
+        font-size: 12px;
+    }
+
+
+    .card-couple {
+
+        margin:
+            14px 0 12px;
+    }
+
+
+    .card-couple h1 {
+
+        font-size: 45px;
+    }
+
+
+    .card-and {
+
+        margin:
+            11px 0;
+    }
+
+
+    .card-date > span {
+
+        font-size: 31px;
+    }
+
+
+    .luxury-open-btn {
+
+        min-width: 175px;
+
+        margin-top: 16px;
+
+        padding:
+            12px 15px;
+    }
+}
+
+/* =========================================================
+   COUPLE PHOTO BACKGROUND
+========================================================= */
+
+.couple-photo-bg {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 0;
+
+    background-image:
+        linear-gradient(
+            to bottom,
+            rgba(255, 250, 240, 0.96) 0%,
+            rgba(255, 250, 240, 0.90) 32%,
+            rgba(255, 250, 240, 0.58) 55%,
+            rgba(232, 215, 181, 0.18) 100%
+        ),
+        url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=85");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    pointer-events: none;
+
+    opacity: 0.95;
+}
+
+.invitation-card {
+    overflow: hidden;
+}
+
+@media (max-width: 600px) {
+
+    .couple-photo-bg {
+
+        height: 43%;
+
+        background-position: center 35%;
+
+        opacity: 0.85;
+    }
+
+}
+
+@media (max-width: 380px) {
+
+    .couple-photo-bg {
+
+        height: 40%;
+
+        background-position: center 30%;
+
+    }
+
+}
+
+/* =========================================================
+   MOBILE OPENING CARD — TOP ORNAMENT FIX
+========================================================= */
+
+@media (max-width: 600px) {
+
+    /* Keep the card safely inside the outer frame */
+    .invitation-card {
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Keep the inner luxury frame inside the card */
+    .luxury-frame {
+        inset: 8px;
+        pointer-events: none;
+    }
+
+    /* Prevent frame corners from becoming oversized */
+    .frame-corner {
+        width: 24px;
+        height: 24px;
+    }
+
+    /* Keep the top ornament small and centered */
+    .card-ornament {
+        position: relative;
+        width: auto;
+        height: auto;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        gap: 8px;
+
+        margin-top: 0;
+        margin-bottom: 18px;
+
+        font-size: 10px;
+
+        transform: none;
+    }
+
+    .card-ornament span {
+        display: block;
+
+        width: 28px;
+        height: 1px;
+
+        background: #b6924d;
+
+        font-size: 0;
+
+        flex-shrink: 0;
+    }
+
+    .card-ornament b {
+        display: block;
+
+        font-size: 13px;
+        line-height: 1;
+
+        font-weight: 400;
+
+        color: #b6924d;
+
+        transform: none;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .frame-corner {
+        display: none;
+    }
+
 }
