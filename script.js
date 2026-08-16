@@ -1,97 +1,96 @@
+/* =========================================================
+   WEDDING INVITATION — JAVASCRIPT
+   Musallam & Iman
+   ========================================================= */
+
+
+/* =========================================================
+   ELEMENTS
+   ========================================================= */
+
+const openButton = document.getElementById("openInvitation");
+const openingScreen = document.getElementById("openingScreen");
+const mainContent = document.getElementById("mainContent");
+
+
 /* ============================================
    INITIAL PAGE STATE
-   ============================================ */
+============================================ */
 
 document.body.style.overflow = "hidden";
+
 
 /* ============================================
    OPEN INVITATION
-   ============================================ */
+============================================ */
 
-/* ============================================
-   INTERACTIVE INVITATION OPENING
-   ============================================ */
+document.addEventListener("DOMContentLoaded", function () {
 
-document.body.style.overflow = "hidden";
+    const openButton = document.getElementById("openInvitation");
+    const openingScreen = document.getElementById("openingScreen");
+    const mainContent = document.getElementById("mainContent");
 
-
-const openButton =
-    document.getElementById("openInvitation");
-
-const openingScreen =
-    document.getElementById("openingScreen");
-
-const mainContent =
-    document.getElementById("mainContent");
-
-
-openButton.addEventListener("click", function () {
-
-    /*
-        Prevent multiple clicks
-    */
-
-    if (openingScreen.classList.contains("opening")) {
+    if (!openButton || !openingScreen || !mainContent) {
+        console.error("Wedding invitation elements not found.");
         return;
     }
 
+    openButton.addEventListener("click", function () {
 
-    /*
-        Start invitation opening animation
-    */
+        /* Prevent double clicks */
+        if (openingScreen.classList.contains("opening")) {
+            return;
+        }
 
-    openingScreen.classList.add("opening");
-
-
-    /*
-        Wait for animation to finish
-        before removing the opening screen
-    */
-
-    setTimeout(function () {
-
-        openingScreen.classList.add("hide");
-
-        mainContent.classList.remove("hidden");
-
-        document.body.style.overflow = "auto";
+        /* Start opening animation */
+        openingScreen.classList.add("opening");
 
         /*
-            Bring user to the top of the wedding website
+            Give the animation time to complete,
+            then reveal the main website.
         */
+        setTimeout(function () {
 
-        window.scrollTo({
-            top: 0,
-            behavior: "instant"
-        });
+            openingScreen.classList.add("hide");
 
-    }, 1100);
+            mainContent.classList.remove("hidden");
+
+            document.body.style.overflow = "auto";
+
+            window.scrollTo({
+                top: 0,
+                behavior: "auto"
+            });
+
+        }, 1100);
+
+    });
 
 });
 
-/* ============================================
+/* =========================================================
    COUNTDOWN TIMER
-   ============================================ */
+   ========================================================= */
 
 /*
-    IMPORTANT:
+    TEMPORARY NIKAH DATE & TIME
 
-    CHANGE THE YEAR BELOW.
+    Current temporary value:
+    24 November 2026
+    06:30 PM
+
+    TODO:
+    Change this when the exact Nikah
+    date and time are confirmed.
 
     Example:
 
     "2026-11-24T18:30:00"
-
-    The current temporary date/time is:
-
-    24 November 2026
-    06:30 PM
-
-    Change this later when your exact
-    Nikah date/time is confirmed.
 */
 
-const weddingDate = new Date("2026-11-24T18:30:00").getTime();
+
+const weddingDate =
+    new Date("2026-11-24T18:30:00").getTime();
 
 
 function updateCountdown() {
@@ -101,6 +100,7 @@ function updateCountdown() {
     const difference = weddingDate - now;
 
 
+    /* If wedding has started */
     if (difference <= 0) {
 
         document.getElementById("days").innerText = "00";
@@ -112,56 +112,57 @@ function updateCountdown() {
     }
 
 
+    /* Days */
     const days = Math.floor(
-        difference / (1000 * 60 * 60 * 24)
+        difference /
+        (1000 * 60 * 60 * 24)
     );
 
 
+    /* Hours */
     const hours = Math.floor(
-        (difference % (1000 * 60 * 60 * 24))
-        / (1000 * 60 * 60)
+        (difference %
+            (1000 * 60 * 60 * 24)) /
+        (1000 * 60 * 60)
     );
 
 
+    /* Minutes */
     const minutes = Math.floor(
-        (difference % (1000 * 60 * 60))
-        / (1000 * 60)
+        (difference %
+            (1000 * 60 * 60)) /
+        (1000 * 60)
     );
 
 
+    /* Seconds */
     const seconds = Math.floor(
-        (difference % (1000 * 60))
-        / 1000
+        (difference %
+            (1000 * 60)) /
+        1000
     );
 
+
+    /* Update HTML */
 
     document.getElementById("days").innerText =
         String(days).padStart(2, "0");
 
-
     document.getElementById("hours").innerText =
         String(hours).padStart(2, "0");
-
 
     document.getElementById("minutes").innerText =
         String(minutes).padStart(2, "0");
 
-
     document.getElementById("seconds").innerText =
         String(seconds).padStart(2, "0");
-
 }
 
 
-/*
-    Update every second
-*/
-
-setInterval(updateCountdown, 1000);
-
-
-/*
-    Run immediately
-*/
+/* =========================================================
+   START COUNTDOWN
+   ========================================================= */
 
 updateCountdown();
+
+setInterval(updateCountdown, 1000);
