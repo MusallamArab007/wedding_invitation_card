@@ -1745,12 +1745,11 @@ background-repeat: no-repeat;
 
     letter-spacing: 1.5px;
 
-    color: #aaa08e;
+    color: #8b7c60;
 
     text-transform: uppercase;
 
 }
-    text-shadow: 0 1px 3px rgba(248, 245, 239, 0.9);
 
 
 /* =========================================================
@@ -2576,7 +2575,7 @@ background-repeat: no-repeat;
 
 
 
-    font-weight: 400;
+    font-weight: 300;
 
     line-height: 0.75;
 
@@ -5789,7 +5788,11 @@ footer .copyright {
     }
 
     .hero-names h1 {
-        font-size: 52px;
+        font-size: 25px;
+        font-weight: 100;
+        text-shadow:
+        0 10px 40px
+        rgba(0,0,0,0.25);
     }
 
     .hero-message {
@@ -6011,14 +6014,14 @@ footer .copyright {
 .invitation-card .card-nikah {
     color: #725b35;
     text-shadow:
-        0 1px 2px rgba(255, 255, 255, 0.9);
+        0 1px 1px rgba(255, 255, 255, 0.99);
 }
 
 /* Button hint */
 .invitation-card .card-hint {
     color: #766754;
     text-shadow:
-        0 1px 2px rgba(255, 255, 255, 0.9);
+        0 1px 1px rgba(255, 255, 255, 0.97);
 }
 
 /* =========================================================
@@ -6226,7 +6229,7 @@ footer .copyright {
 
     color: #f5f0e4;
 
-    font-weight: 400;
+    font-weight: 300;
 
     /* Keep the outline elegant, NOT thick */
     -webkit-text-stroke: 0.7px rgba(255, 255, 255, 0.9);
@@ -6319,25 +6322,14 @@ footer .copyright {
         margin-top: 18px;
     }
 
-    .groom-name {
-        font-size: 2.65rem;
-        line-height: 0.98;
-        letter-spacing: -0.02em;
-        margin-bottom: 10px;
-    }
+ 
 
     .couple-and {
         font-size: 1.2rem;
         margin: 10px 0;
     }
 
-    .bride-name {
-        font-size: 2.35rem;
-        line-height: 1;
-        letter-spacing: -0.02em;
-        margin-top: 8px;
-        margin-bottom: 20px;
-    }
+
 }
 
 
@@ -6354,10 +6346,12 @@ footer .copyright {
 
     .groom-name {
         font-size: 2.35rem;
+        font-weight: 100;
     }
 
     .bride-name {
         font-size: 2.1rem;
+        font-weight: 100;
     }
 
     .couple-and {
@@ -6724,3 +6718,58 @@ footer .copyright {
 
     transform: scale(0.96);
 }
+
+/* Import an elegant wedding-style font */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&display=swap');
+
+/* Names container */
+.hero-names {
+    text-align: center;
+    width: 100%;
+}
+
+/* Groom & Bride names */
+.groom-name,
+.bride-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: 0.02em;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    margin: 0;
+}
+
+/* Groom */
+.groom-name {
+    font-size: clamp(2rem, 5vw, 4rem);
+}
+
+/* Bride */
+.bride-name {
+    font-size: clamp(1.8rem, 4.5vw, 3.5rem);
+}
+
+/* & section */
+.hero-and {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 10px 0;
+}
+
+.hero-and b {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.hero-and span {
+    width: 45px;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.6;
+}
+
+
