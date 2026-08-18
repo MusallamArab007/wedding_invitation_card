@@ -5468,7 +5468,7 @@ footer .copyright {
     color: #f5eddd;
 
     text-shadow:
-        0 4px 25px rgba(0,0,0,0.25);
+        0 4px 25px rgba(214, 132, 132, 0.25);
 }
 
 
@@ -5478,7 +5478,7 @@ footer .copyright {
     align-items: center;
     justify-content: center;
 
-    gap: 12px;
+    gap: 14px;
 
     margin: 18px 0;
 }
@@ -5789,10 +5789,10 @@ footer .copyright {
 
     .hero-names h1 {
         font-size: 25px;
-        font-weight: 100;
+        /* font-weight: 0px; */
         text-shadow:
         0 10px 40px
-        rgba(0,0,0,0.25);
+        rgba(245, 125, 125, 0.4);
     }
 
     .hero-message {
@@ -6012,16 +6012,16 @@ footer .copyright {
 
 /* NIKAH • WALIMA line */
 .invitation-card .card-nikah {
-    color: #725b35;
+    color: #000;
     text-shadow:
-        0 1px 1px rgba(255, 255, 255, 0.99);
+        0 1px 1px rgba(255, 255, 255, 0.6);
 }
 
 /* Button hint */
 .invitation-card .card-hint {
-    color: #766754;
+    color: #000;
     text-shadow:
-        0 1px 1px rgba(255, 255, 255, 0.97);
+        0 1px 1px rgba(255, 255, 255, 0.6);
 }
 
 /* =========================================================
@@ -6114,7 +6114,8 @@ footer .copyright {
     }
 
     .invitation-card .card-couple h1 {
-        font-size: clamp(1.8rem, 8vw, 2.5rem);
+        /* font-size: clamp(1.8rem, 8vw, 2.5rem); */
+        font-size: 22px;
 
         line-height: 0.92;
 
@@ -6142,7 +6143,7 @@ footer .copyright {
    VERY SMALL PHONES
    ========================================================= */
 
-@media (max-width: 380px) {
+/* @media (max-width: 380px) {
 
     .invitation-card .card-couple {
         width: 92%;
@@ -6153,7 +6154,7 @@ footer .copyright {
         line-height: 0.92;
     }
 
-}
+} */
 
 .groom-name,
 .bride-name {
@@ -6177,7 +6178,7 @@ footer .copyright {
 .bride-name {
     font-size: clamp(2.3rem, 9vw, 4.5rem);
 }
-
+/* 
 @media (max-width: 480px) {
     .groom-name {
         font-size: 2.7rem;
@@ -6188,7 +6189,7 @@ footer .copyright {
         font-size: 2.45rem;
         line-height: 0.95;
     }
-}
+} */
 
 
 /* =========================================================
@@ -6309,7 +6310,7 @@ footer .copyright {
    MOBILE
    ========================================================= */
 
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
 
     .hero {
         min-height: 100svh;
@@ -6320,7 +6321,7 @@ footer .copyright {
         width: 100%;
         max-width: 390px;
         margin-top: 18px;
-    }
+    } */
 
  
 
@@ -6337,7 +6338,7 @@ footer .copyright {
    VERY SMALL PHONES
    ========================================================= */
 
-@media (max-width: 360px) {
+/* @media (max-width: 360px) {
 
     .hero {
         padding-left: 14px;
@@ -6357,7 +6358,7 @@ footer .copyright {
     .couple-and {
         font-size: 1.1rem;
     }
-}
+} */
 
 /* =========================================
    PREMIUM OPENING SCREEN
@@ -6669,7 +6670,7 @@ footer .copyright {
 
 /* golden light */
 
-.luxury-open-btn::before {
+/* .luxury-open-btn::before {
 
     content: "";
 
@@ -6691,7 +6692,7 @@ footer .copyright {
     transform: skewX(-20deg);
 
     transition: left 0.7s ease;
-}
+} */
 
 
 /* Hover */
@@ -6771,173 +6772,39 @@ footer .copyright {
     background: currentColor;
     opacity: 0.6;
 }
-/* =========================================================
-   WEDDING INVITATION — JAVASCRIPT
-   Musallam & Iman
-   ========================================================= */
 
 
-/* =========================================================
-   ELEMENTS
-   ========================================================= */
+/* 📱 Small screens */
+@media (max-width: 600px) {
 
-const openButton = document.getElementById("openInvitation");
-const openingScreen = document.getElementById("openingScreen");
-const mainContent = document.getElementById("mainContent");
-
-
-/* ============================================
-   INITIAL PAGE STATE
-============================================ */
-
-document.body.style.overflow = "hidden";
-
-
-/* ============================================
-   OPEN INVITATION
-============================================ */
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    const openButton = document.getElementById("openInvitation");
-    const openingScreen = document.getElementById("openingScreen");
-    const mainContent = document.getElementById("mainContent");
-
-    if (!openButton || !openingScreen || !mainContent) {
-        console.error("Wedding invitation elements not found.");
-        return;
+    .hero {
+        padding-left: 14px;
+        padding-right: 14px;
     }
 
-    openButton.addEventListener("click", function () {
-
-        /* Prevent double clicks */
-        if (openingScreen.classList.contains("opening")) {
-            return;
-        }
-
-        /* Start opening animation */
-        openingScreen.classList.add("opening");
-
-        /*
-            Give the animation time to complete,
-            then reveal the main website.
-        */
-        setTimeout(function () {
-
-            openingScreen.classList.add("hide");
-
-            mainContent.classList.remove("hidden");
-
-            document.body.style.overflow = "auto";
-
-            window.scrollTo({
-                top: 0,
-                behavior: "auto"
-            });
-
-        }, 1100);
-
-    });
-
-});
-
-/* =========================================================
-   COUNTDOWN TIMER
-   ========================================================= */
-
-/*
-    TEMPORARY NIKAH DATE & TIME
-
-    Current temporary value:
-    24 November 2026
-    06:30 PM
-
-    TODO:
-    Change this when the exact Nikah
-    date and time are confirmed.
-
-    Example:
-
-    "2026-11-24T18:30:00"
-*/
-
-
-const weddingDate =
-    new Date("2026-11-24T18:30:00").getTime();
-
-
-function updateCountdown() {
-
-    const now = new Date().getTime();
-
-    const difference = weddingDate - now;
-
-
-    /* If wedding has started */
-    if (difference <= 0) {
-
-        document.getElementById("days").innerText = "00";
-        document.getElementById("hours").innerText = "00";
-        document.getElementById("minutes").innerText = "00";
-        document.getElementById("seconds").innerText = "00";
-
-        return;
+    .groom-name {
+        font-size: 2rem;
+        font-weight: 400;
+        line-height: 1;
     }
 
+    .bride-name {
+        font-size: 1.8rem;
+        font-weight: 400;
+        line-height: 1;
+    }
 
-    /* Days */
-    const days = Math.floor(
-        difference /
-        (1000 * 60 * 60 * 24)
-    );
+    .hero-and b {
+        font-size: 1.1rem;
+    }
 
+    .hero-and {
+        gap: 8px;
+        margin: 7px 0;
+    }
 
-    /* Hours */
-    const hours = Math.floor(
-        (difference %
-            (1000 * 60 * 60 * 24)) /
-        (1000 * 60 * 60)
-    );
-
-
-    /* Minutes */
-    const minutes = Math.floor(
-        (difference %
-            (1000 * 60 * 60)) /
-        (1000 * 60)
-    );
-
-
-    /* Seconds */
-    const seconds = Math.floor(
-        (difference %
-            (1000 * 60)) /
-        1000
-    );
-
-
-    /* Update HTML */
-
-    document.getElementById("days").innerText =
-        String(days).padStart(2, "0");
-
-    document.getElementById("hours").innerText =
-        String(hours).padStart(2, "0");
-
-    document.getElementById("minutes").innerText =
-        String(minutes).padStart(2, "0");
-
-    document.getElementById("seconds").innerText =
-        String(seconds).padStart(2, "0");
+    .hero-and span {
+        width: 30px;
+    }
 }
-
-
-/* =========================================================
-   START COUNTDOWN
-   ========================================================= */
-
-updateCountdown();
-
-setInterval(updateCountdown, 1000);
-
 
