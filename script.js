@@ -166,3 +166,45 @@ function updateCountdown() {
 updateCountdown();
 
 setInterval(updateCountdown, 1000);
+
+
+/* =========================================================
+   Intro section
+   ========================================================= */
+
+const openCurtainBtn = document.getElementById("openCurtainBtn");
+
+const intro = document.getElementById("wedding-intro");
+
+const leftCurtain = document.querySelector(".curtain-left");
+
+const rightCurtain = document.querySelector(".curtain-right");
+
+
+openCurtainBtn.addEventListener("click", () => {
+
+    // Disable button
+    openCurtainBtn.style.pointerEvents = "none";
+
+    // Hide center content
+    document.querySelector(".intro-content").style.opacity = "0";
+
+    // Open curtains
+    leftCurtain.style.transform = "translateX(-100%)";
+
+    rightCurtain.style.transform = "translateX(100%)";
+
+
+    // Remove intro after animation
+    setTimeout(() => {
+
+        intro.style.transition = "opacity 1s ease";
+        intro.style.opacity = "0";
+
+        setTimeout(() => {
+            intro.style.display = "none";
+        }, 1000);
+
+    }, 1800);
+
+});
