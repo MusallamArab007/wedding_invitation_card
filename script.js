@@ -207,4 +207,78 @@ openCurtainBtn.addEventListener("click", () => {
 
     }, 1800);
 
+   
+    const weddingMusic = document.getElementById("weddingMusic");
+    const musicToggle = document.getElementById("musicToggle");
+
+    // openCurtainBtn.addEventListener("click", () => {
+
+        weddingMusic.volume = 0;
+
+        weddingMusic.play()
+            .then(() => {
+
+                musicToggle.classList.add("playing");
+
+                // Smooth volume fade-in
+                let volume = 0;
+
+                const fadeIn = setInterval(() => {
+
+                    volume += 0.05;
+
+                    if (volume >= 0.7) {
+                        volume = 0.7;
+                        clearInterval(fadeIn);
+                    }
+
+                    weddingMusic.volume = volume;
+
+                }, 100);
+
+            })
+            .catch(error => {
+                console.log("Music could not start:", error);
+            });
+
+
+        // Your curtain animation
+        openCurtainBtn.style.pointerEvents = "none";
+
+        document.querySelector(".intro-content").style.opacity = "0";
+
+        document.querySelector(".curtain-left")
+            .style.transform = "translateX(-100%)";
+
+        document.querySelector(".curtain-right")
+            .style.transform = "translateX(100%)";
+
+// });
+
+
 });
+
+musicToggle.addEventListener("click", () => {
+
+    if (weddingMusic.paused) {
+
+        weddingMusic.play();
+
+        musicToggle.classList.add("playing");
+
+    } else {
+
+        weddingMusic.pause();
+
+        musicToggle.classList.remove("playing");
+
+    }
+
+});
+
+setTimeout(() => {
+
+    musicToggle.style.opacity = "1";
+    musicToggle.style.pointerEvents = "auto";
+
+}, 2200);
