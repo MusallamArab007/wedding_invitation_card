@@ -7187,3 +7187,65 @@ footer .copyright {
     }
 
 }
+
+/* music css */
+
+.music-toggle {
+    position: fixed;
+
+    right: 20px;
+    bottom: 20px;
+
+    width: 44px;
+    height: 44px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(216, 183, 106, 0.7);
+
+    background: rgba(7, 31, 25, 0.85);
+
+    color: #d8b76a;
+
+    font-size: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    z-index: 10000;
+
+    backdrop-filter: blur(8px);
+
+    transition: all 0.4s ease;
+}
+
+.music-toggle:hover {
+    transform: scale(1.08);
+
+    box-shadow:
+        0 0 20px rgba(216, 183, 106, 0.25);
+}
+
+.music-toggle.playing {
+    animation: musicRotate 4s linear infinite;
+}
+
+@keyframes musicRotate {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+.music-toggle {
+    opacity: 0;
+    pointer-events: none;
+}
