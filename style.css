@@ -6121,7 +6121,7 @@ footer .copyright {
 
     .invitation-card .card-couple h1 {
         /* font-size: clamp(1.8rem, 8vw, 2.5rem); */
-        /* font-size: 17px; */
+        font-size: 21px;
 
         line-height: 0.92;
 
