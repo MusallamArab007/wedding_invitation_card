@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&display=swap');
+
 
 /* ============================================
    RESET
@@ -1373,8 +1375,9 @@ background-repeat: no-repeat;
 
     color: #27251f;
 
-}
     text-shadow: 0 2px 6px rgba(248, 245, 239, 0.9);
+
+}
 
 
 .card-and {
@@ -1451,8 +1454,9 @@ background-repeat: no-repeat;
 
     line-height: 1;
 
-}
     text-shadow: 0 2px 4px rgba(248, 245, 239, 0.9);
+
+}
 
 
 .card-date div {
@@ -1474,8 +1478,9 @@ background-repeat: no-repeat;
 
     color: #4d473d;
 
-}
     text-shadow: 0 1px 3px rgba(248, 245, 239, 0.9);
+
+}
 
 
 .card-date small {
@@ -1505,8 +1510,9 @@ background-repeat: no-repeat;
 
     color: #9a8c73;
 
-}
     text-shadow: 0 1px 3px rgba(248, 245, 239, 0.9);
+
+}
 
 
 /* =========================================================
@@ -2124,11 +2130,11 @@ background-repeat: no-repeat;
     }
 
 
-    .card-couple h1 {
+    /* .card-couple h1 {
 
         font-size: 51px;
 
-    }
+    } */
 
 
     .card-request {
@@ -3442,9 +3448,9 @@ footer .copyright {
         padding: 30px 18px;
     }
 
-    .card-couple h1 {
+    /* .card-couple h1 {
         font-size: 48px;
-    }
+    } */
 
     .card-bismillah {
         font-size: 17px;
@@ -4650,8 +4656,8 @@ footer .copyright {
     .card-couple h1 {
 
         font-size: clamp(
-            44px,
-            14vw,
+            40px,
+            3.5vw,
             58px
         );
 
@@ -4817,7 +4823,7 @@ footer .copyright {
 
     .card-couple h1 {
 
-        font-size: 45px;
+        /* font-size: 45px; */
     }
 
 
@@ -5459,7 +5465,7 @@ footer .copyright {
 
     font-family: var(--serif);
 
-    font-size: clamp(58px, 9vw, 40px);
+    font-size: clamp(40px, 3.5vw, 90px);
 
     font-weight: 300;
 
@@ -5738,7 +5744,7 @@ footer .copyright {
     }
 
     .hero-names h1 {
-        font-size: 40px;
+        /* font-size: 40px; */
     }
 
     .hero-and {
@@ -5788,7 +5794,7 @@ footer .copyright {
     }
 
     .hero-names h1 {
-        font-size: 25px;
+        /* font-size: 25px; */
         /* font-weight: 0px; */
         text-shadow:
         0 10px 40px
@@ -5814,7 +5820,7 @@ footer .copyright {
    ========================================================= */
 
 /* Desktop hero composition */
-@media (min-width: 701px) {
+/* @media (min-width: 701px) {
 
     .hero {
         height: 100vh;
@@ -5866,9 +5872,9 @@ footer .copyright {
 
     .hero-names h1 {
         /* font-size: clamp(68px, 7vw, 92px); */
-        line-height: 0.82;
+        /* line-height: 0.82;
         margin: 0;
-    }
+    } */
 
     .hero-and {
         margin: 10px 0;
@@ -5903,7 +5909,7 @@ footer .copyright {
     .scroll-line {
         height: 22px;
     }
-}
+} */
 
 
 /* =========================================================
@@ -6048,7 +6054,7 @@ footer .copyright {
 
     font-family: "Cormorant Garamond", serif;
 
-    font-size: clamp(2rem, 5vw, 3.4rem);
+    font-size: clamp(1.9rem, 3.5vw, 2.5rem);
 
     line-height: 0.95;
 
@@ -6093,13 +6099,13 @@ footer .copyright {
    Smaller typography for longer names
    ========================================================= */
 
-@media (min-width: 601px) {
+/* @media (min-width: 601px) {
 
     .invitation-card .card-couple h1 {
         font-size: clamp(2.1rem, 3.5vw, 3.1rem);
     }
 
-}
+} */
 
 
 /* =========================================================
@@ -6115,7 +6121,7 @@ footer .copyright {
 
     .invitation-card .card-couple h1 {
         /* font-size: clamp(1.8rem, 8vw, 2.5rem); */
-        font-size: 22px;
+        font-size: 17px;
 
         line-height: 0.92;
 
@@ -6444,10 +6450,9 @@ footer .copyright {
     background:
         linear-gradient(
             145deg,
-        to bottom,
-        rgba(255, 250, 240, 0.94) 0%,
-        rgba(248, 239, 220, 0.82) 42%,
-        rgba(232, 215, 181, 0.58) 100%
+            rgba(255, 250, 240, 0.94) 0%,
+            rgba(248, 239, 220, 0.82) 42%,
+            rgba(232, 215, 181, 0.58) 100%
             /* rgba(255,255,255,0.08),
             rgba(255,255,255,0.02) */
         );
@@ -6721,7 +6726,6 @@ footer .copyright {
 }
 
 /* Import an elegant wedding-style font */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&display=swap');
 
 /* Names container */
 .hero-names {
@@ -6807,7 +6811,6 @@ footer .copyright {
         width: 30px;
     }
 }
-
 
 /* new intro section  */
 
@@ -6929,6 +6932,21 @@ footer .copyright {
     color: #e8d39a;
 
     animation: introAppear 2s ease forwards;
+}
+
+@keyframes sparkle {
+
+    0%,
+    100% {
+        opacity: 0.55;
+        transform: scale(0.9) rotate(0deg);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.18) rotate(8deg);
+    }
+
 }
 
 @keyframes introAppear {
@@ -7249,3 +7267,192 @@ footer .copyright {
     opacity: 0;
     pointer-events: none;
 }
+
+/* =========================================================
+   FINAL CLEANUP / CINEMATIC INTRO POLISH
+   ========================================================= */
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+/* Keep the three-screen intro above every existing layer. */
+#wedding-intro {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100dvh;
+    min-height: 100svh;
+    isolation: isolate;
+    overscroll-behavior: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+#wedding-intro .curtain {
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+#wedding-intro .intro-glow {
+    z-index: 1;
+    pointer-events: none;
+}
+
+#wedding-intro .particles {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+}
+
+#wedding-intro .intro-content {
+    z-index: 10;
+    width: min(92vw, 520px);
+    padding: 24px 18px;
+    pointer-events: none;
+}
+
+#wedding-intro #openCurtainBtn {
+    pointer-events: auto;
+    min-height: 54px;
+    border-radius: 0;
+    -webkit-tap-highlight-color: transparent;
+    box-shadow:
+        0 12px 34px rgba(0, 0, 0, 0.28),
+        inset 0 0 0 1px rgba(216, 183, 106, 0.08);
+}
+
+#wedding-intro #openCurtainBtn:focus-visible {
+    outline: 1px solid #e8d39a;
+    outline-offset: 5px;
+}
+
+#wedding-intro .monogram {
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+#wedding-intro .intro-symbol {
+    text-shadow: 0 0 18px rgba(216, 183, 106, 0.45);
+}
+
+/* Music control: hidden until music has actually started. */
+.music-toggle {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(8px);
+}
+
+.music-toggle.is-visible,
+.music-toggle.visible,
+.music-toggle.playing {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.music-toggle.playing {
+    animation: musicRotate 4s linear infinite;
+}
+
+/* Avoid horizontal movement when the page is opened on narrow phones. */
+@media (max-width: 600px) {
+
+    #wedding-intro {
+        height: 100dvh;
+        min-height: 100svh;
+    }
+
+    #wedding-intro .intro-content {
+        width: 94vw;
+        padding: 20px 12px;
+    }
+
+    #wedding-intro .monogram {
+        gap: 12px;
+    }
+
+    #wedding-intro .monogram span {
+        font-size: clamp(68px, 22vw, 86px);
+    }
+
+    #wedding-intro .monogram small {
+        font-size: 23px;
+    }
+
+    #wedding-intro .intro-line {
+        width: 100px;
+        margin: 16px 0;
+    }
+
+    #wedding-intro .intro-content p {
+        margin-bottom: 28px;
+        font-size: 8px;
+        letter-spacing: 2.4px;
+    }
+
+    #wedding-intro #openCurtainBtn {
+        min-width: 190px;
+        min-height: 52px;
+        padding: 14px 24px;
+        font-size: 9px;
+        letter-spacing: 2.2px;
+    }
+
+    #wedding-intro .tap-text {
+        margin-top: 15px;
+    }
+
+    .music-toggle {
+        right: max(14px, env(safe-area-inset-right));
+        bottom: max(14px, env(safe-area-inset-bottom));
+        width: 42px;
+        height: 42px;
+    }
+}
+
+@media (max-width: 380px) {
+
+    #wedding-intro .monogram span {
+        font-size: 68px;
+    }
+
+    #wedding-intro .monogram small {
+        font-size: 21px;
+    }
+
+    #wedding-intro .intro-content p {
+        margin-bottom: 24px;
+        font-size: 7px;
+        letter-spacing: 2px;
+    }
+
+    #wedding-intro #openCurtainBtn {
+        min-width: 178px;
+        min-height: 49px;
+        padding: 13px 20px;
+        font-size: 8px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    #wedding-intro *,
+    #wedding-intro::before,
+    #wedding-intro::after,
+    .music-toggle {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
