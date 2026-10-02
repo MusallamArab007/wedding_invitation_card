@@ -37,13 +37,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     openButton.addEventListener("click", function () {
 
-        /* Prevent double clicks */
-        if (openingScreen.classList.contains("opening")) {
+        /* Prevent double clicks while the cinematic entrance is playing. */
+        if (openingScreen.classList.contains("cinematic-opening")) {
             return;
         }
 
-        /* Start opening animation */
-        openingScreen.classList.add("opening");
+        /* Start the archway, doors and golden-light sequence. */
+        openingScreen.classList.add("cinematic-opening");
 
         /*
             Give the animation time to complete,
@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 behavior: "auto"
             });
 
-        }, 1100);
+        }, window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 80 : 2900);
 
     });
 
@@ -89,8 +89,10 @@ document.addEventListener("DOMContentLoaded", function () {
 */
 
 
-const weddingDate =
-    new Date("2026-11-24T18:30:00").getTime();
+const countdownSection = document.getElementById("countdown");
+const weddingDateValue =
+    countdownSection?.dataset.weddingDate || "2026-11-24T18:30:00";
+const weddingDate = new Date(weddingDateValue).getTime();
 
 
 function updateCountdown() {
@@ -169,6 +171,45 @@ setInterval(updateCountdown, 1000);
 
 
 /* =========================================================
+   COUNTDOWN DATE REVEAL
+   Uses the same date configured on #countdown for the timer.
+   ========================================================= */
+
+const dateRevealButton = document.getElementById("revealDateButton");
+const dateReveal = document.getElementById("dateReveal");
+
+if (dateRevealButton && dateReveal) {
+    const revealDateValue = new Date(weddingDateValue);
+    const revealedDay = document.getElementById("revealedDay");
+    const revealedMonth = document.getElementById("revealedMonth");
+    const revealedYearDay = document.getElementById("revealedYearDay");
+
+    if (!Number.isNaN(revealDateValue.getTime())) {
+        if (revealedDay) revealedDay.textContent = revealDateValue.getDate();
+        if (revealedMonth) {
+            revealedMonth.textContent = revealDateValue
+                .toLocaleDateString("en-US", { month: "long" })
+                .toUpperCase();
+        }
+        if (revealedYearDay) {
+            const weekday = revealDateValue
+                .toLocaleDateString("en-US", { weekday: "long" })
+                .toUpperCase();
+            revealedYearDay.textContent = `${revealDateValue.getFullYear()} • ${weekday}`;
+        }
+    }
+
+    dateRevealButton.addEventListener("click", function () {
+        if (dateReveal.classList.contains("is-revealed")) return;
+
+        dateReveal.classList.add("is-revealed");
+        dateRevealButton.setAttribute("aria-expanded", "true");
+        dateRevealButton.disabled = true;
+    });
+}
+
+
+/* =========================================================
    Intro section
    ========================================================= */
 
@@ -207,7 +248,6 @@ openCurtainBtn.addEventListener("click", () => {
 
     }, 1800);
 
-   
     const weddingMusic = document.getElementById("weddingMusic");
     const musicToggle = document.getElementById("musicToggle");
 
@@ -253,10 +293,9 @@ openCurtainBtn.addEventListener("click", () => {
         document.querySelector(".curtain-right")
             .style.transform = "translateX(100%)";
 
+    });
+
 // });
-
-
-});
 
 musicToggle.addEventListener("click", () => {
 
