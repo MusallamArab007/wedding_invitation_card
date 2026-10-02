@@ -2184,6 +2184,172 @@ background-repeat: no-repeat;
 
 }
 
+/* =========================================================
+   CINEMATIC ISLAMIC ARCHWAY ENTRANCE
+   The layer is dormant on the existing opening card and is
+   activated only by the existing "Open Invitation" button.
+   ========================================================= */
+
+.archway-entrance {
+    position: absolute;
+    z-index: 60;
+    width: min(590px, 94vw);
+    height: min(780px, 94vh);
+    left: 50%;
+    top: 50%;
+    pointer-events: none;
+    opacity: 0;
+    transform: translate(-50%, -48%) scale(.94);
+    transform-origin: center;
+}
+
+.archway-outline {
+    position: absolute;
+    inset: 32px 12px 10px;
+    border: 1px solid rgba(216, 198, 155, .76);
+    border-radius: 300px 300px 8px 8px / 390px 390px 8px 8px;
+    box-shadow: inset 0 0 0 7px rgba(182, 155, 98, .08), 0 0 38px rgba(216, 198, 155, .12);
+}
+
+.archway-outline::before,
+.archway-outline::after {
+    content: "";
+    position: absolute;
+    top: 21%;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(transparent, rgba(216, 198, 155, .7), transparent);
+}
+
+.archway-outline::before { left: 13%; }
+.archway-outline::after { right: 13%; }
+
+.archway-dome {
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    top: 0;
+    width: 72px;
+    height: 42px;
+    transform: translateX(-50%);
+    border: 1px solid rgba(216, 198, 155, .8);
+    border-bottom: 0;
+    border-radius: 72px 72px 0 0;
+    color: var(--light-gold);
+    display: grid;
+    place-items: center;
+    font-size: 15px;
+    text-shadow: 0 0 16px rgba(216, 198, 155, .8);
+}
+
+.archway-light {
+    position: absolute;
+    z-index: 1;
+    inset: 12% 9% 4%;
+    opacity: 0;
+    background: radial-gradient(ellipse at center, rgba(255, 236, 176, .86) 0%, rgba(215, 178, 95, .38) 30%, rgba(20, 50, 41, 0) 69%);
+    filter: blur(9px);
+}
+
+.archway-message {
+    position: absolute;
+    z-index: 5;
+    width: 100%;
+    top: 61%;
+    color: #fff4d7;
+    font: 500 clamp(1.35rem, 3.5vw, 2rem) var(--serif);
+    letter-spacing: .06em;
+    text-align: center;
+    opacity: 0;
+    text-shadow: 0 2px 20px rgba(80, 48, 8, .55);
+}
+
+.archway-doors {
+    position: absolute;
+    z-index: 4;
+    inset: 16% 11% 8%;
+    display: flex;
+    overflow: hidden;
+    border-radius: 260px 260px 5px 5px / 350px 350px 5px 5px;
+    box-shadow: 0 0 34px rgba(0, 0, 0, .38);
+}
+
+.archway-door {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #143229;
+    background-image: linear-gradient(45deg, rgba(216, 198, 155, .07) 25%, transparent 25%, transparent 75%, rgba(216, 198, 155, .07) 75%), linear-gradient(-45deg, rgba(216, 198, 155, .055) 25%, transparent 25%, transparent 75%, rgba(216, 198, 155, .055) 75%), linear-gradient(90deg, #0b251f, #21463b 55%, #102c25);
+    background-size: 28px 28px, 28px 28px, 100% 100%;
+    backface-visibility: hidden;
+    will-change: transform;
+}
+
+.archway-door-left { transform-origin: left center; border-right: 1px solid rgba(216, 198, 155, .7); }
+.archway-door-right { transform-origin: right center; border-left: 1px solid rgba(216, 198, 155, .7); }
+
+.door-border {
+    position: absolute;
+    inset: 17px 13px;
+    border: 1px solid rgba(216, 198, 155, .72);
+    box-shadow: inset 0 0 0 6px rgba(216, 198, 155, .05);
+}
+
+.door-pattern {
+    position: absolute;
+    inset: 30% 19%;
+    border: 1px solid rgba(216, 198, 155, .42);
+    transform: rotate(45deg);
+}
+
+.door-handle {
+    position: absolute;
+    top: 56%;
+    width: 7px;
+    height: 26px;
+    border: 1px solid #e0c784;
+    border-radius: 9px;
+    background: linear-gradient(90deg, #a9823b, #f2dc9b, #a9823b);
+    box-shadow: 0 0 11px rgba(216, 198, 155, .55);
+}
+
+.archway-door-left .door-handle { right: 12px; }
+.archway-door-right .door-handle { left: 12px; }
+
+.opening-screen.cinematic-opening { pointer-events: none; }
+
+.opening-screen.cinematic-opening .luxury-open-btn { animation: archwayButtonPulse .45s ease both; }
+.opening-screen.cinematic-opening .archway-entrance { animation: archwayAppear .65s .12s ease-out both; }
+.opening-screen.cinematic-opening .archway-light { animation: goldenLight 2.25s .54s ease-out both; }
+.opening-screen.cinematic-opening .archway-door-left { animation: openLeftDoor 2s .56s cubic-bezier(.22, .61, .36, 1) forwards; }
+.opening-screen.cinematic-opening .archway-door-right { animation: openRightDoor 2s .56s cubic-bezier(.22, .61, .36, 1) forwards; }
+.opening-screen.cinematic-opening .archway-message { animation: archwayWords 1.25s 1s ease both; }
+.opening-screen.cinematic-opening .gold-particles,
+.opening-screen.cinematic-opening .opening-particles { filter: brightness(1.7); }
+
+@keyframes archwayButtonPulse { 50% { transform: scale(.94); filter: brightness(1.28); } 100% { transform: scale(1); } }
+@keyframes archwayAppear { to { opacity: 1; transform: translate(-50%, -50%) scale(1); } }
+@keyframes goldenLight { 0% { opacity: 0; transform: scale(.65); } 45% { opacity: 1; transform: scale(1); } 100% { opacity: .8; transform: scale(1.22); } }
+@keyframes openLeftDoor { to { transform: perspective(1200px) rotateY(-86deg); opacity: .25; } }
+@keyframes openRightDoor { to { transform: perspective(1200px) rotateY(86deg); opacity: .25; } }
+@keyframes archwayWords { 30%, 70% { opacity: 1; transform: translateY(0); } 100% { opacity: 0; transform: translateY(-8px); } }
+
+@media (max-width: 600px) {
+    .archway-entrance { height: min(730px, 93vh); }
+    .archway-doors { inset: 17% 9% 9%; }
+    .archway-outline { inset: 35px 5px 10px; }
+    .door-border { inset: 12px 9px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .opening-screen.cinematic-opening .archway-entrance,
+    .opening-screen.cinematic-opening .archway-light,
+    .opening-screen.cinematic-opening .archway-door,
+    .opening-screen.cinematic-opening .archway-message,
+    .opening-screen.cinematic-opening .luxury-open-btn { animation-duration: .01ms !important; }
+}
+
 
 
 
@@ -4205,6 +4371,111 @@ footer .copyright {
     margin: 0;
 }
 
+/* =========================================================
+   COUNTDOWN DATE REVEAL
+   Kept within the existing countdown section so the visual
+   reveal and live countdown always refer to one wedding date.
+   ========================================================= */
+
+.countdown-date-reveal {
+    position: relative;
+    width: min(100%, 410px);
+    min-height: 145px;
+    margin: 30px auto 18px;
+    overflow: hidden;
+    border: 1px solid rgba(182, 155, 98, .55);
+    background: #143229;
+    box-shadow: 0 16px 38px rgba(20, 50, 41, .14);
+}
+
+.countdown-date-reveal::before,
+.countdown-date-reveal::after {
+    content: "";
+    position: absolute;
+    z-index: 3;
+    top: 8px;
+    bottom: 8px;
+    width: 1px;
+    background: linear-gradient(transparent, rgba(216, 198, 155, .75), transparent);
+}
+
+.countdown-date-reveal::before { left: 9px; }
+.countdown-date-reveal::after { right: 9px; }
+
+.date-reveal-eyebrow {
+    position: absolute;
+    z-index: 4;
+    top: 16px;
+    left: 0;
+    width: 100%;
+    color: #d8c69b;
+    font-size: 8px;
+    letter-spacing: 3px;
+}
+
+.date-reveal-cover {
+    position: absolute;
+    z-index: 2;
+    inset: 0;
+    display: grid;
+    place-content: center;
+    gap: 12px;
+    width: 100%;
+    border: 0;
+    cursor: pointer;
+    overflow: hidden;
+    color: #f8f5ef;
+    background: linear-gradient(120deg, #0d2a23, #21463b 52%, #102e27);
+    font: 500 10px Montserrat, sans-serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: opacity .7s ease, transform .7s cubic-bezier(.22,.61,.36,1);
+}
+
+.date-reveal-cover b { color: #d8c69b; font-size: 17px; }
+.date-reveal-cover:hover { background: linear-gradient(120deg, #143229, #2b584d 52%, #143229); }
+.date-reveal-cover:focus-visible { outline: 2px solid #d8c69b; outline-offset: -6px; }
+
+.date-reveal-shimmer {
+    position: absolute;
+    width: 45%;
+    height: 180%;
+    background: linear-gradient(90deg, transparent, rgba(255, 248, 221, .18), transparent);
+    transform: translateX(-250%) rotate(18deg);
+    animation: dateRevealShimmer 3.6s ease-in-out infinite;
+}
+
+.revealed-date {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    color: #f8f5ef;
+    background: radial-gradient(circle at 50% 30%, #326a59, #143229 72%);
+}
+
+.revealed-date > span { color: #d8c69b; font: 600 5.3rem/.78 var(--serif); }
+.revealed-date strong { display: block; font-size: 13px; letter-spacing: 3px; }
+.revealed-date small { display: block; margin-top: 8px; color: #d8c69b; font-size: 8px; letter-spacing: 2px; }
+
+.countdown-date-reveal.is-revealed .date-reveal-cover {
+    opacity: 0;
+    transform: translateY(-100%);
+    pointer-events: none;
+}
+
+@keyframes dateRevealShimmer {
+    0%, 25% { transform: translateX(-250%) rotate(18deg); }
+    58%, 100% { transform: translateX(360%) rotate(18deg); }
+}
+
+@media (max-width: 600px) {
+    .countdown-date-reveal { width: min(100%, 355px); min-height: 135px; }
+    .revealed-date > span { font-size: 4.7rem; }
+}
+
 
 /* =========================================================
    INTRO
@@ -6054,7 +6325,7 @@ footer .copyright {
 
     font-family: "Cormorant Garamond", serif;
 
-    font-size: clamp(1.9rem, 3.5vw, 2.5rem);
+    font-size: clamp(1.9rem, 3vw, 3.5rem);
 
     line-height: 0.95;
 
@@ -6121,7 +6392,7 @@ footer .copyright {
 
     .invitation-card .card-couple h1 {
         /* font-size: clamp(1.8rem, 8vw, 2.5rem); */
-        font-size: 19px;
+        font-size: 21px;
 
         line-height: 0.92;
 
@@ -7455,4 +7726,3 @@ body {
         transition-duration: 0.01ms !important;
     }
 }
-
