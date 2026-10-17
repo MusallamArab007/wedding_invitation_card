@@ -2473,6 +2473,111 @@ footer {
     padding-block: 78px;
 }
 
+/* =========================================================
+   HERO — LUXURY COMPOSITION REFINEMENT
+   A soft illuminated centre gives the first main-page view
+   a more intentional, premium hierarchy.
+   ========================================================= */
+
+body .hero {
+    background:
+        radial-gradient(ellipse 60% 58% at 50% 47%, rgba(62, 121, 101, .62) 0%, rgba(31, 76, 63, .38) 40%, transparent 72%),
+        linear-gradient(135deg, #0a241e 0%, #153b31 50%, #0a241e 100%);
+    box-shadow: inset 0 0 120px rgba(0, 0, 0, .28);
+}
+
+body .hero-frame {
+    inset: 28px;
+    border-color: rgba(216, 198, 155, .42);
+}
+
+body .hero-content {
+    width: min(760px, 91vw);
+    padding: clamp(30px, 4vw, 46px) clamp(22px, 5vw, 58px);
+    border-top: 1px solid rgba(216, 198, 155, .28);
+    border-bottom: 1px solid rgba(216, 198, 155, .2);
+    background: linear-gradient(90deg, transparent, rgba(248, 245, 239, .035) 16%, rgba(248, 245, 239, .065) 50%, rgba(248, 245, 239, .035) 84%, transparent);
+    box-shadow: 0 24px 55px rgba(0, 0, 0, .11);
+}
+
+body .hero-ornament {
+    margin-bottom: 17px;
+}
+
+body .hero-bismillah {
+    margin-bottom: 20px;
+    color: #f0dca6;
+    text-shadow: 0 2px 15px rgba(0, 0, 0, .2);
+}
+
+body .hero-intro {
+    margin-top: 0;
+    margin-bottom: 14px;
+    color: #e1c98e;
+    font-weight: 600;
+}
+
+body .hero-subtitle {
+    max-width: 480px;
+    color: rgba(248, 245, 239, .8);
+    font-size: clamp(1.05rem, 1.65vw, 1.25rem);
+}
+
+body .hero-names {
+    margin: clamp(26px, 4vw, 36px) auto 22px;
+}
+
+body .hero-names h1 {
+    color: #fff8e9;
+    line-height: .95;
+    text-shadow: 0 3px 24px rgba(0, 0, 0, .28);
+}
+
+body .hero-and {
+    margin-block: 14px;
+}
+
+body .hero-and b {
+    color: #e4c47c;
+    text-shadow: 0 0 18px rgba(228, 196, 124, .32);
+}
+
+body .hero-date {
+    margin: 0 0 24px;
+    padding: 12px 30px;
+    border-color: rgba(226, 197, 131, .52);
+    background: rgba(7, 28, 23, .14);
+}
+
+body .hero-message {
+    max-width: 410px;
+    color: rgba(248, 245, 239, .82);
+    font-size: clamp(1rem, 1.45vw, 1.15rem);
+}
+
+body .hero-scroll {
+    margin-top: 29px;
+}
+
+@media (max-width: 600px) {
+    body .hero-frame {
+        inset: 14px;
+    }
+
+    body .hero-content {
+        width: 92vw;
+        padding: 28px 17px 24px;
+    }
+
+    body .hero-names {
+        margin-top: 25px;
+    }
+
+    body .hero-date {
+        padding-inline: 22px;
+    }
+}
+
 @media (max-width: 600px) {
     main > section {
         padding-block: 76px;
@@ -3576,6 +3681,50 @@ section h2 {
     pointer-events: none;
 }
 
+.nikah-venue-section {
+    color: #f8f5ef;
+    background:
+        radial-gradient(ellipse at 50% 22%, rgba(72, 134, 111, .58) 0%, transparent 56%),
+        linear-gradient(135deg, #0a241e 0%, #153b31 55%, #0a241e 100%);
+}
+
+.nikah-venue-section::before {
+    background: radial-gradient(ellipse at 50% 0%, rgba(216, 198, 155, .15) 0%, transparent 68%);
+}
+
+.nikah-venue-section .section-label {
+    color: #dfc481;
+}
+
+.nikah-venue-section h2,
+.nikah-venue-section .venue-card h3 {
+    color: #fff7e8;
+}
+
+.nikah-venue-section .venue-card {
+    border-color: rgba(216, 198, 155, .56);
+    background: linear-gradient(145deg, rgba(28, 70, 59, .94), rgba(10, 36, 30, .94));
+    box-shadow: 0 24px 56px rgba(0, 0, 0, .25);
+}
+
+.nikah-venue-section .venue-card p {
+    color: rgba(248, 245, 239, .76);
+}
+
+.nikah-venue-section .venue-icon {
+    color: #dfc481;
+}
+
+.nikah-venue-section .map-btn {
+    color: #17382e;
+    background: #dfc481;
+}
+
+.nikah-venue-section .map-btn:hover {
+    color: #f8f5ef;
+    background: #2b6454;
+}
+
 
 .venue-card {
     max-width: 650px;
@@ -3586,7 +3735,8 @@ section h2 {
 
     border: 1px solid #d9cfbc;
 
-    background: white;
+    background: rgba(255, 255, 255, .72);
+    box-shadow: 0 18px 44px rgba(18, 40, 34, .1);
 }
 
 
@@ -3626,7 +3776,7 @@ section h2 {
 
     padding: 13px 25px;
 
-    background: #302c25;
+    background: #143229;
 
     color: white;
 
@@ -4609,8 +4759,8 @@ footer .copyright {
 .countdown-date-reveal {
     position: relative;
     width: min(100%, 410px);
-    min-height: 145px;
-    margin: 30px auto 18px;
+    min-height: 126px;
+    margin: 26px auto 18px;
     overflow: hidden;
     border: 1px solid rgba(182, 155, 98, .55);
     background: #143229;
@@ -4646,9 +4796,11 @@ footer .copyright {
     position: absolute;
     z-index: 2;
     inset: 0;
-    display: grid;
-    place-content: center;
-    gap: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
     width: 100%;
     border: 0;
     cursor: pointer;
@@ -4661,9 +4813,48 @@ footer .copyright {
     transition: opacity .7s ease, transform .7s cubic-bezier(.22,.61,.36,1);
 }
 
-.date-reveal-cover b { color: #d8c69b; font-size: 17px; }
 .date-reveal-cover:hover { background: linear-gradient(120deg, #143229, #2b584d 52%, #143229); }
 .date-reveal-cover:focus-visible { outline: 2px solid #d8c69b; outline-offset: -6px; }
+
+.date-reveal-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+}
+
+.date-reveal-copy small {
+    color: rgba(248, 245, 239, .67);
+    font-size: 8px;
+    letter-spacing: 2.2px;
+}
+
+.date-reveal-copy strong {
+    color: #fff4d7;
+    font: 600 10px Montserrat, sans-serif;
+    letter-spacing: 1.8px;
+}
+
+.date-reveal-seal {
+    display: grid;
+    place-items: center;
+    width: 27px;
+    height: 27px;
+    margin: 4px 0 0;
+    border: 1px solid rgba(255, 239, 188, .74);
+    border-radius: 0;
+    background: rgba(216, 198, 155, .08);
+    box-shadow: none;
+    color: #e7ce91;
+    font-size: 12px;
+    transform: rotate(45deg);
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.date-reveal-cover:hover .date-reveal-seal {
+    transform: rotate(45deg) scale(1.12);
+    box-shadow: 0 0 0 4px rgba(216, 198, 155, .1);
+}
 
 .date-reveal-shimmer {
     position: absolute;
@@ -4731,7 +4922,8 @@ footer .copyright {
 }
 
 @media (max-width: 600px) {
-    .countdown-date-reveal { width: min(100%, 355px); min-height: 135px; }
+    .countdown-date-reveal { width: min(100%, 355px); min-height: 128px; }
+    .date-reveal-copy strong { letter-spacing: 1.2px; }
     .revealed-date-main > span { font-size: 4.7rem; }
 }
 
