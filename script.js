@@ -108,7 +108,7 @@ function setupDateReveal(weddingDate) {
                 "BEGIN:VEVENT",
                 `DTSTART:${formatCalendarDate(weddingDate)}`,
                 `DTEND:${formatCalendarDate(eventEnd)}`,
-                "SUMMARY:Musallam & Iman's Nikah",
+                "SUMMARY:Musallam's Nikah",
                 "LOCATION:Mohammadiya Masjid, Aurangabad",
                 "DESCRIPTION:With the blessings of Allah.",
                 "END:VEVENT",
