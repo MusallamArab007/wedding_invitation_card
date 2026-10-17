@@ -554,10 +554,14 @@
             type="button"
             aria-expanded="false"
             aria-controls="revealedDate"
+            aria-label="Reveal the wedding date"
         >
             <span class="date-reveal-shimmer" aria-hidden="true"></span>
-            <span>Tap to reveal our celebration date</span>
-            <b aria-hidden="true">&#10022;</b>
+            <span class="date-reveal-copy">
+                <!-- <small>Our save-the-date awaits</small> -->
+                <strong>Tap to Reveal our wedding date</strong>
+            </span>
+            <span class="date-reveal-seal" aria-hidden="true">&#10022;</span>
         </button>
         <div class="revealed-date" id="revealedDate" aria-live="polite">
             <div class="revealed-date-main">
@@ -781,6 +785,44 @@
              VENUE SECTION
              ===================================== -->
 
+        <section class="venue-section nikah-venue-section" id="nikahVenue">
+
+            <p class="section-label">
+                NIKAH CEREMONY
+            </p>
+
+            <h2>
+                Nikah Venue
+            </h2>
+
+            <div class="venue-card">
+
+                <div class="venue-icon">
+                    &#9789;
+                </div>
+
+                <h3>
+                    Mohammadiya Masjid
+                </h3>
+
+                <p>
+                    Altamash Colony, Kiradpura,<br>
+                    Aurangabad
+                </p>
+
+                <a
+                    href="https://www.google.com/maps/search/?api=1&amp;query=Mohammadiya%20Masjid%2C%20Altamash%20Colony%2C%20Kiradpura%2C%20Aurangabad"
+                    class="map-btn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Open Nikah Location
+                </a>
+
+            </div>
+
+        </section>
+
         <section class="venue-section">
 
             <p class="section-label">
@@ -813,7 +855,12 @@
                 the actual Google Maps location.
                 -->
 
-                <a href="https://www.google.com/maps/dir//Imperial+Lawns-Aurangabad,+V9V2%2BXVP,+Kat+Kat+Gate+Rd,+Kat+Kat+Gate,+Farzad+Colony,+Jaswantpura,+Chhatrapati+Sambhajinagar,+Maharashtra+431001/@19.8063563,75.4501553,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3bdba2a5465d6fc7:0x4e02c38268d14d51!2m2!1d75.3522038!2d19.8949694?entry=ttu&g_ep=EgoyMDI2MDgxMi4wIKXMDSoASAFQAw%3D%3D" class="map-btn">
+                <a
+                    href="https://www.google.com/maps/dir//Imperial+Lawns-Aurangabad,+V9V2%2BXVP,+Kat+Kat+Gate+Rd,+Kat+Kat+Gate,+Farzad+Colony,+Jaswantpura,+Chhatrapati+Sambhajinagar,+Maharashtra+431001/@19.8063563,75.4501553,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3bdba2a5465d6fc7:0x4e02c38268d14d51!2m2!1d75.3522038!2d19.8949694?entry=ttu&amp;g_ep=EgoyMDI2MDgxMi4wIKXMDSoASAFQAw%3D%3D"
+                    class="map-btn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     View Location
                 </a>
 
