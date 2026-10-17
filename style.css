@@ -2381,6 +2381,86 @@ background-repeat: no-repeat;
 }
 
 /* =========================================================
+   FINAL MOBILE HERO OVERRIDES
+   Kept last so older desktop/mobile rules cannot compress it.
+   ========================================================= */
+
+@media (max-width: 600px) {
+    body .hero {
+        min-height: 100svh;
+        height: auto;
+        padding: 34px 16px 22px;
+        justify-content: center;
+    }
+
+    body .hero-frame { inset: 9px; }
+    body .hero-frame::before { inset: 5px; }
+
+    body .hero-content {
+        width: min(100%, 420px);
+        padding: 22px 14px 16px;
+        border-top-color: rgba(216, 198, 155, .2);
+        border-bottom-color: rgba(216, 198, 155, .16);
+        box-shadow: none;
+    }
+
+    body .hero-ornament { gap: 9px; margin-bottom: 11px; font-size: 10px; }
+    body .hero-ornament span { width: 34px; }
+    body .hero-bismillah { margin-bottom: 13px; font-size: clamp(14px, 4.5vw, 18px); }
+    body .hero-intro { margin-bottom: 9px; font-size: 7px; letter-spacing: 2.2px; }
+
+    body .hero-subtitle {
+        max-width: 310px;
+        font-size: clamp(.9rem, 3.6vw, 1.05rem);
+        line-height: 1.42;
+    }
+
+    body .hero-names { margin: 20px auto 16px; }
+
+    body .groom-name,
+    body .bride-name {
+        max-width: 330px;
+        font-size: clamp(1.72rem, 8.2vw, 2.35rem);
+        line-height: .9;
+        -webkit-text-stroke: 0;
+        text-shadow: 0 2px 15px rgba(0, 0, 0, .24);
+    }
+
+    body .hero-and { margin-block: 8px; }
+    body .hero-and span { width: 31px; }
+    body .hero-date { gap: 10px; margin-bottom: 15px; padding: 8px 19px; }
+    body .hero-date .hero-day { font-size: 35px; }
+    body .hero-date strong { font-size: 8px; letter-spacing: 2.4px; }
+    body .hero-date small { font-size: 7px; }
+    body .hero-divider { margin-bottom: 14px; }
+
+    body .hero-message {
+        max-width: 300px;
+        font-size: clamp(.84rem, 3.3vw, 1rem);
+        line-height: 1.52;
+    }
+
+    body .hero-scroll { margin-top: 18px; }
+    body .hero-scroll span { font-size: 7px; letter-spacing: 2.2px; }
+    body .scroll-line { height: 17px; }
+    body .scroll-arrow { display: none; }
+}
+
+@media (max-width: 380px) {
+    body .hero { padding: 27px 11px 16px; }
+    body .hero-content { padding: 16px 10px 12px; }
+    body .hero-ornament { margin-bottom: 8px; }
+    body .hero-bismillah { margin-bottom: 9px; font-size: 13px; }
+    body .hero-subtitle { font-size: .8rem; }
+    body .hero-names { margin: 15px auto 12px; }
+    body .groom-name,
+    body .bride-name { font-size: clamp(1.42rem, 8.2vw, 1.8rem); }
+    body .hero-date { margin-bottom: 11px; }
+    body .hero-message { font-size: .76rem; }
+    body .hero-scroll { margin-top: 12px; }
+}
+
+/* =========================================================
    STEP 2 — VISUAL HIERARCHY & SPACING POLISH
    Refines the existing design without changing its theme.
    ========================================================= */
@@ -2597,6 +2677,215 @@ body .hero-scroll {
 
     .countdown {
         margin-top: 30px;
+    }
+}
+
+/* FINAL MOBILE HERO OVERRIDES — intentionally last in the stylesheet. */
+@media (max-width: 600px) {
+    body .hero { min-height: 100svh; height: auto; padding: 34px 16px 22px; justify-content: center; }
+    body .hero-frame { inset: 9px; }
+    body .hero-frame::before { inset: 5px; }
+    body .hero-content { width: min(100%, 420px); padding: 22px 14px 16px; border-top-color: rgba(216, 198, 155, .2); border-bottom-color: rgba(216, 198, 155, .16); box-shadow: none; }
+    body .hero-ornament { gap: 9px; margin-bottom: 11px; font-size: 10px; }
+    body .hero-ornament span { width: 34px; }
+    body .hero-bismillah { margin-bottom: 13px; font-size: clamp(14px, 4.5vw, 18px); }
+    body .hero-intro { margin-bottom: 9px; font-size: 7px; letter-spacing: 2.2px; }
+    body .hero-subtitle { max-width: 310px; font-size: clamp(.9rem, 3.6vw, 1.05rem); line-height: 1.42; }
+    body .hero-names { margin: 20px auto 16px; }
+    body .groom-name, body .bride-name { max-width: 330px; font-size: clamp(1.72rem, 8.2vw, 2.35rem); line-height: .9; -webkit-text-stroke: 0; text-shadow: 0 2px 15px rgba(0, 0, 0, .24); }
+    body .hero-and { margin-block: 8px; }
+    body .hero-and span { width: 31px; }
+    body .hero-date { gap: 10px; margin-bottom: 15px; padding: 8px 19px; }
+    body .hero-date .hero-day { font-size: 35px; }
+    body .hero-date strong { font-size: 8px; letter-spacing: 2.4px; }
+    body .hero-date small { font-size: 7px; }
+    body .hero-divider { margin-bottom: 14px; }
+    body .hero-message { max-width: 300px; font-size: clamp(.84rem, 3.3vw, 1rem); line-height: 1.52; }
+    body .hero-scroll { margin-top: 18px; }
+    body .hero-scroll span { font-size: 7px; letter-spacing: 2.2px; }
+    body .scroll-line { height: 17px; }
+    body .scroll-arrow { display: none; }
+}
+
+@media (max-width: 380px) {
+    body .hero { padding: 27px 11px 16px; }
+    body .hero-content { padding: 16px 10px 12px; }
+    body .hero-ornament { margin-bottom: 8px; }
+    body .hero-bismillah { margin-bottom: 9px; font-size: 13px; }
+    body .hero-subtitle { font-size: .8rem; }
+    body .hero-names { margin: 15px auto 12px; }
+    body .groom-name, body .bride-name { font-size: clamp(1.42rem, 8.2vw, 1.8rem); }
+    body .hero-date { margin-bottom: 11px; }
+    body .hero-message { font-size: .76rem; }
+    body .hero-scroll { margin-top: 12px; }
+}
+
+/* =========================================================
+   MOBILE HERO — COMPACT LUXURY COMPOSITION
+   Prevents the desktop invitation hierarchy from being
+   squeezed on narrow phones while preserving the theme.
+   ========================================================= */
+
+@media (max-width: 600px) {
+    body .hero {
+        min-height: 100svh;
+        height: auto;
+        padding: 34px 16px 22px;
+        justify-content: center;
+    }
+
+    body .hero-frame {
+        inset: 9px;
+    }
+
+    body .hero-frame::before {
+        inset: 5px;
+    }
+
+    body .hero-content {
+        width: min(100%, 420px);
+        padding: 22px 14px 16px;
+        border-top-color: rgba(216, 198, 155, .2);
+        border-bottom-color: rgba(216, 198, 155, .16);
+        box-shadow: none;
+    }
+
+    body .hero-ornament {
+        gap: 9px;
+        margin-bottom: 11px;
+        font-size: 10px;
+    }
+
+    body .hero-ornament span {
+        width: 34px;
+    }
+
+    body .hero-bismillah {
+        margin-bottom: 13px;
+        font-size: clamp(14px, 4.5vw, 18px);
+    }
+
+    body .hero-intro {
+        margin-bottom: 9px;
+        font-size: 7px;
+        letter-spacing: 2.2px;
+    }
+
+    body .hero-subtitle {
+        max-width: 310px;
+        font-size: clamp(.9rem, 3.6vw, 1.05rem);
+        line-height: 1.42;
+    }
+
+    body .hero-names {
+        margin: 20px auto 16px;
+    }
+
+    body .groom-name,
+    body .bride-name {
+        max-width: 330px;
+        font-size: clamp(1.72rem, 8.2vw, 2.35rem);
+        line-height: .9;
+        -webkit-text-stroke: 0;
+        text-shadow: 0 2px 15px rgba(0, 0, 0, .24);
+    }
+
+    body .hero-and {
+        margin-block: 8px;
+    }
+
+    body .hero-and span {
+        width: 31px;
+    }
+
+    body .hero-date {
+        gap: 10px;
+        margin-bottom: 15px;
+        padding: 8px 19px;
+    }
+
+    body .hero-date .hero-day {
+        font-size: 35px;
+    }
+
+    body .hero-date strong {
+        font-size: 8px;
+        letter-spacing: 2.4px;
+    }
+
+    body .hero-date small {
+        font-size: 7px;
+    }
+
+    body .hero-divider {
+        margin-bottom: 14px;
+    }
+
+    body .hero-message {
+        max-width: 300px;
+        font-size: clamp(.84rem, 3.3vw, 1rem);
+        line-height: 1.52;
+    }
+
+    body .hero-scroll {
+        margin-top: 18px;
+    }
+
+    body .hero-scroll span {
+        font-size: 7px;
+        letter-spacing: 2.2px;
+    }
+
+    body .scroll-line {
+        height: 17px;
+    }
+
+    body .scroll-arrow {
+        display: none;
+    }
+}
+
+@media (max-width: 380px) {
+    body .hero {
+        padding: 27px 11px 16px;
+    }
+
+    body .hero-content {
+        padding: 16px 10px 12px;
+    }
+
+    body .hero-ornament {
+        margin-bottom: 8px;
+    }
+
+    body .hero-bismillah {
+        margin-bottom: 9px;
+        font-size: 13px;
+    }
+
+    body .hero-subtitle {
+        font-size: .8rem;
+    }
+
+    body .hero-names {
+        margin: 15px auto 12px;
+    }
+
+    body .groom-name,
+    body .bride-name {
+        font-size: clamp(1.42rem, 8.2vw, 1.8rem);
+    }
+
+    body .hero-date {
+        margin-bottom: 11px;
+    }
+
+    body .hero-message {
+        font-size: .76rem;
+    }
+
+    body .hero-scroll {
+        margin-top: 12px;
     }
 }
 
