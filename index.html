@@ -12,21 +12,20 @@
     <title>Musallam's | Wedding Invitation</title>
 
     <!-- Wedding Favicon -->
-    <link rel="icon" type="image/png" href="images/favicon.png">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
           rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/favicon.png">
 
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    
+
     <audio id="weddingMusic" preload="auto" loop>
         <source src="assets/music/bi_saraha.mp3" type="audio/mpeg">
     </audio>
@@ -74,15 +73,16 @@
         <p>WITH LOVE, WE INVITE YOU</p>
 
         <button id="openCurtainBtn">
-            <span>OPEN OUR STORY</span>
+            <span>OPEN THE CURTAIN ♡</span>
             <span class="heart">♡</span>
         </button>
 
-        <small class="tap-text">TAP TO BEGIN</small>
+        <small class="tap-text">TAP TO REVEAL</small>
 
     </div>
 
 </div>
+
     <!-- =========================================
          OPENING INVITATION SCREEN
          ========================================= -->
@@ -116,6 +116,27 @@
         <span></span>
         <span></span>
         <span></span>
+    </div>
+
+    <!-- Cinematic archway: activated by the Open Invitation button -->
+    <div class="archway-entrance" aria-hidden="true">
+        <div class="archway-dome"><span>✦</span></div>
+        <div class="archway-outline"></div>
+        <div class="archway-light"></div>
+        <p class="archway-message">Step Into Our Story</p>
+
+        <div class="archway-doors">
+            <div class="archway-door archway-door-left">
+                <span class="door-border"></span>
+                <span class="door-pattern"></span>
+                <span class="door-handle"></span>
+            </div>
+            <div class="archway-door archway-door-right">
+                <span class="door-border"></span>
+                <span class="door-pattern"></span>
+                <span class="door-handle"></span>
+            </div>
+        </div>
     </div>
 
 
@@ -504,7 +525,7 @@
      COUNTDOWN SECTION
 ===================================================== -->
 
-<section class="countdown-section" id="countdown">
+<section class="countdown-section" id="countdown" data-wedding-date="2026-11-24T18:30:00">
 
     <div class="countdown-decoration">
         ✦
@@ -524,16 +545,32 @@
     </p>
 
 
-    <!-- Wedding Date -->
-    <div class="countdown-date">
-
-        <span>24</span>
-
-        <div>
-            <strong>NOVEMBER</strong>
-            <small>2026</small>
+    <!-- This reveal and the live countdown share one date source. -->
+    <div class="countdown-date-reveal" id="dateReveal">
+        <p class="date-reveal-eyebrow">THE DATE IS SET</p>
+        <button
+            class="date-reveal-cover"
+            id="revealDateButton"
+            type="button"
+            aria-expanded="false"
+            aria-controls="revealedDate"
+        >
+            <span class="date-reveal-shimmer" aria-hidden="true"></span>
+            <span>Tap to reveal our celebration date</span>
+            <b aria-hidden="true">&#10022;</b>
+        </button>
+        <div class="revealed-date" id="revealedDate" aria-live="polite">
+            <div class="revealed-date-main">
+                <span id="revealedDay">24</span>
+                <div>
+                    <strong id="revealedMonth">NOVEMBER</strong>
+                    <small id="revealedYearDay">2026 &bull; TUESDAY</small>
+                </div>
+            </div>
+            <button class="calendar-button" id="addToCalendar" type="button" disabled>
+                Add to calendar <span aria-hidden="true">&#8599;</span>
+            </button>
         </div>
-
     </div>
 
 
@@ -595,7 +632,7 @@
 
 
     <p class="countdown-bottom">
-        Until our beautiful beginning
+        We Cannot wait to see you their
     </p>
 
 </section>
@@ -640,7 +677,7 @@
 
                     <p class="event-time">
                         <!-- CHANGE NIKAH TIME HERE -->
-                        After Asar • 06:30 PM
+                        06:30 PM
                     </p>
 
                     <p class="event-location">
@@ -796,7 +833,7 @@
             </div>
 
             <h2>
-                M & I
+                Musallam & Iman
             </h2>
 
             <p>
@@ -814,7 +851,6 @@
         </footer>
 
     </main>
-
 
     <button id="musicToggle" class="music-toggle" aria-label="Toggle music">
         ♪
