@@ -2762,6 +2762,213 @@ body .venue-section .map-btn:hover::after {
     transform: translate(2px, -2px);
 }
 
+body .event-quick-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+    margin: 32px auto 0;
+    color: rgba(248, 245, 239, .58);
+    font-size: 9px;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+}
+
+body .event-quick-nav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 0;
+    color: #dfc481;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(223, 196, 129, .38);
+    transition: color .2s ease, border-color .2s ease, transform .2s ease;
+}
+
+body .event-quick-nav a:hover {
+    color: #fff4d7;
+    border-color: #fff4d7;
+    transform: translateY(-2px);
+}
+
+body .event-quick-nav a span {
+    font-size: 13px;
+    line-height: 1;
+}
+
+/* Guest blessings — a direct, private WhatsApp wish rather than a public guestbook. */
+body .guest-blessings-section {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    color: #f8f5ef;
+    background:
+        radial-gradient(ellipse at 50% 22%, rgba(70, 128, 106, .46), transparent 58%),
+        linear-gradient(135deg, #0b2821 0%, #153d32 52%, #0a241e 100%);
+}
+
+body .guest-blessings-content {
+    position: relative;
+    z-index: 1;
+    width: min(100%, 620px);
+    margin: 0 auto;
+}
+
+body .guest-blessings-section .section-label {
+    color: #dfc481;
+}
+
+body .guest-blessings-section h2 {
+    color: #fff7e8;
+}
+
+body .guest-blessings-intro {
+    max-width: 430px;
+    margin: 20px auto 30px;
+    color: rgba(248, 245, 239, .78);
+    font: italic 1.08rem/1.65 var(--serif);
+}
+
+body .blessings-form {
+    display: grid;
+    gap: 9px;
+    max-width: 470px;
+    margin: 0 auto;
+    padding: 30px;
+    text-align: left;
+    border: 1px solid rgba(223, 196, 129, .38);
+    background: rgba(4, 25, 20, .24);
+    box-shadow: 0 22px 50px rgba(0, 0, 0, .16);
+}
+
+body .blessings-form label {
+    margin-top: 7px;
+    color: #e8d8af;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+body .blessings-form label span {
+    color: rgba(248, 245, 239, .5);
+    font-weight: 400;
+}
+
+body .blessings-form input,
+body .blessings-form textarea {
+    width: 100%;
+    border: 1px solid rgba(223, 196, 129, .3);
+    border-radius: 0;
+    outline: none;
+    background: rgba(255, 255, 255, .06);
+    color: #fff7e8;
+    font: 400 15px var(--serif);
+    transition: border-color .2s ease, background .2s ease;
+}
+
+body .blessings-form input {
+    height: 47px;
+    padding: 0 14px;
+}
+
+body .blessings-form textarea {
+    min-height: 108px;
+    padding: 12px 14px;
+    resize: vertical;
+}
+
+body .blessings-form input::placeholder,
+body .blessings-form textarea::placeholder {
+    color: rgba(248, 245, 239, .42);
+}
+
+body .blessings-form input:focus,
+body .blessings-form textarea:focus {
+    border-color: #dfc481;
+    background: rgba(255, 255, 255, .09);
+}
+
+body .blessings-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 49px;
+    margin-top: 12px;
+    border: 1px solid #dfc481;
+    background: #dfc481;
+    color: #143229;
+    cursor: pointer;
+    font: 600 10px Montserrat, sans-serif;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    transition: transform .2s ease, background .2s ease, color .2s ease;
+}
+
+body .blessings-submit:hover {
+    transform: translateY(-2px);
+    background: transparent;
+    color: #f8f5ef;
+}
+
+body .blessings-thanks {
+    min-height: 24px;
+    margin: 18px auto 0;
+    color: #f2dda3;
+    font: italic 1.05rem/1.5 var(--serif);
+}
+
+/* Keep the hero concise on phones and create a lighter pause before the venues. */
+@media (max-width: 600px) {
+    body .hero {
+        min-height: 0;
+        height: auto;
+        max-height: none;
+        padding: 34px 16px 36px;
+    }
+
+    body .hero-content {
+        height: auto;
+        max-height: none;
+        padding: 20px 14px 18px;
+    }
+
+    body .hero-scroll {
+        margin-top: 16px !important;
+    }
+
+    body .guest-blessings-section {
+        color: #29251f;
+        background:
+            radial-gradient(ellipse at 50% 0%, rgba(216, 198, 155, .35), transparent 58%),
+            linear-gradient(145deg, #fbf8f1, #eee5d5);
+    }
+
+    body .guest-blessings-section .section-label {
+        color: #a78343;
+    }
+
+    body .guest-blessings-section h2 {
+        color: #29251f;
+    }
+
+    body .guest-blessings-intro {
+        color: #665e52;
+    }
+
+    body .blessings-form {
+        border-color: rgba(182, 155, 98, .52);
+        background: #143229;
+        box-shadow: 0 18px 38px rgba(20, 50, 41, .16);
+    }
+
+    body .blessings-thanks {
+        color: #806331;
+    }
+}
+
 @media (max-width: 600px) {
     body main > section:not(.hero) {
         padding: 70px 18px;
@@ -2811,12 +3018,30 @@ body .venue-section .map-btn:hover::after {
         gap: 14px;
     }
 
+    body .event-quick-nav {
+        max-width: 290px;
+        margin-top: 26px;
+        gap: 8px 14px;
+        font-size: 8px;
+        letter-spacing: 1.35px;
+    }
+
     body .event-card {
         padding: 38px 18px;
     }
 
     body .event-card h3 {
         font-size: clamp(2.25rem, 11vw, 2.7rem);
+    }
+
+    body .guest-blessings-intro {
+        max-width: 320px;
+        margin: 18px auto 25px;
+        font-size: 1rem;
+    }
+
+    body .blessings-form {
+        padding: 24px 18px;
     }
 
     body .message-section .message {
