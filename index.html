@@ -741,6 +741,12 @@
 
             </div>
 
+            <nav class="event-quick-nav" aria-label="Venue shortcuts">
+                <span>Explore venues</span>
+                <a href="#nikahVenue">Nikah venue <span aria-hidden="true">↓</span></a>
+                <a href="#walimaVenue">Walima venue <span aria-hidden="true">↓</span></a>
+            </nav>
+
         </section>
 
 
@@ -775,6 +781,54 @@
                 <p class="dua">
                     آمين يا رب العالمين
                 </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             GUEST BLESSINGS
+             ===================================== -->
+
+        <section class="guest-blessings-section" id="guestBlessings">
+
+            <div class="guest-blessings-content">
+
+                <p class="section-label">WITH LOVE FROM OUR GUESTS</p>
+
+                <h2>Your Blessings Mean<br>the World to Us</h2>
+
+                <p class="guest-blessings-intro">
+                    Your prayers, kind words and presence are the most beautiful
+                    gift as we begin this new chapter together.
+                </p>
+
+                <form class="blessings-form" id="blessingsForm">
+                    <label for="guestName">Your name</label>
+                    <input
+                        id="guestName"
+                        name="guestName"
+                        type="text"
+                        autocomplete="name"
+                        placeholder="Enter your name"
+                        required
+                    >
+
+                    <label for="guestBlessing">Your blessing or wish <span>(optional)</span></label>
+                    <textarea
+                        id="guestBlessing"
+                        name="guestBlessing"
+                        rows="4"
+                        placeholder="May Allah bless your journey with love and barakah..."
+                    ></textarea>
+
+                    <button class="blessings-submit" type="submit">
+                        Send your blessings <span aria-hidden="true">↗</span>
+                    </button>
+                </form>
+
+                <p class="blessings-thanks" id="blessingsThanks" aria-live="polite"></p>
 
             </div>
 
@@ -823,7 +877,7 @@
 
         </section>
 
-        <section class="venue-section">
+        <section class="venue-section" id="walimaVenue">
 
             <p class="section-label">
                 JOIN US
