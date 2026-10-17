@@ -11,8 +11,6 @@
 const openButton = document.getElementById("openInvitation");
 const openingScreen = document.getElementById("openingScreen");
 const mainContent = document.getElementById("mainContent");
-const weddingMusic = document.getElementById("weddingMusic");
-const musicToggle = document.getElementById("musicToggle");
 
 
 /* ============================================
@@ -26,7 +24,7 @@ document.body.style.overflow = "hidden";
    OPEN INVITATION
 ============================================ */
 
-function setupInvitationOpening() {
+document.addEventListener("DOMContentLoaded", function () {
 
     const openButton = document.getElementById("openInvitation");
     const openingScreen = document.getElementById("openingScreen");
@@ -39,13 +37,13 @@ function setupInvitationOpening() {
 
     openButton.addEventListener("click", function () {
 
-        /* Prevent double clicks while the cinematic entrance is playing. */
-        if (openingScreen.classList.contains("cinematic-opening")) {
+        /* Prevent double clicks */
+        if (openingScreen.classList.contains("opening")) {
             return;
         }
 
-        /* Start the archway, doors and golden-light sequence. */
-        openingScreen.classList.add("cinematic-opening");
+        /* Start opening animation */
+        openingScreen.classList.add("opening");
 
         /*
             Give the animation time to complete,
@@ -64,17 +62,11 @@ function setupInvitationOpening() {
                 behavior: "auto"
             });
 
-        }, window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 80 : 2900);
+        }, 1100);
 
     });
 
-}
-
-if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", setupInvitationOpening, { once: true });
-} else {
-    setupInvitationOpening();
-}
+});
 
 /* =========================================================
    COUNTDOWN TIMER
@@ -97,10 +89,8 @@ if (document.readyState === "loading") {
 */
 
 
-const countdownSection = document.getElementById("countdown");
-const weddingDateValue =
-    countdownSection?.dataset.weddingDate || "2026-11-24T18:30:00";
-const weddingDate = new Date(weddingDateValue).getTime();
+const weddingDate =
+    new Date("2026-11-24T18:30:00").getTime();
 
 
 function updateCountdown() {
@@ -179,45 +169,6 @@ setInterval(updateCountdown, 1000);
 
 
 /* =========================================================
-   COUNTDOWN DATE REVEAL
-   Uses the same date configured on #countdown for the timer.
-   ========================================================= */
-
-const dateRevealButton = document.getElementById("revealDateButton");
-const dateReveal = document.getElementById("dateReveal");
-
-if (dateRevealButton && dateReveal) {
-    const revealDateValue = new Date(weddingDateValue);
-    const revealedDay = document.getElementById("revealedDay");
-    const revealedMonth = document.getElementById("revealedMonth");
-    const revealedYearDay = document.getElementById("revealedYearDay");
-
-    if (!Number.isNaN(revealDateValue.getTime())) {
-        if (revealedDay) revealedDay.textContent = revealDateValue.getDate();
-        if (revealedMonth) {
-            revealedMonth.textContent = revealDateValue
-                .toLocaleDateString("en-US", { month: "long" })
-                .toUpperCase();
-        }
-        if (revealedYearDay) {
-            const weekday = revealDateValue
-                .toLocaleDateString("en-US", { weekday: "long" })
-                .toUpperCase();
-            revealedYearDay.textContent = `${revealDateValue.getFullYear()} • ${weekday}`;
-        }
-    }
-
-    dateRevealButton.addEventListener("click", function () {
-        if (dateReveal.classList.contains("is-revealed")) return;
-
-        dateReveal.classList.add("is-revealed");
-        dateRevealButton.setAttribute("aria-expanded", "true");
-        dateRevealButton.disabled = true;
-    });
-}
-
-
-/* =========================================================
    Intro section
    ========================================================= */
 
@@ -230,7 +181,6 @@ const leftCurtain = document.querySelector(".curtain-left");
 const rightCurtain = document.querySelector(".curtain-right");
 
 
-if (openCurtainBtn && intro && leftCurtain && rightCurtain) {
 openCurtainBtn.addEventListener("click", () => {
 
     // Disable button
@@ -257,15 +207,18 @@ openCurtainBtn.addEventListener("click", () => {
 
     }, 1800);
 
+   
+    const weddingMusic = document.getElementById("weddingMusic");
+    const musicToggle = document.getElementById("musicToggle");
+
     // openCurtainBtn.addEventListener("click", () => {
 
-    if (weddingMusic) {
         weddingMusic.volume = 0;
 
         weddingMusic.play()
             .then(() => {
 
-                musicToggle?.classList.add("playing");
+                musicToggle.classList.add("playing");
 
                 // Smooth volume fade-in
                 let volume = 0;
@@ -279,7 +232,7 @@ openCurtainBtn.addEventListener("click", () => {
                         clearInterval(fadeIn);
                     }
 
-                    if (weddingMusic) weddingMusic.volume = volume;
+                    weddingMusic.volume = volume;
 
                 }, 100);
 
@@ -287,7 +240,6 @@ openCurtainBtn.addEventListener("click", () => {
             .catch(error => {
                 console.log("Music could not start:", error);
             });
-    }
 
 
         // Your curtain animation
@@ -301,12 +253,11 @@ openCurtainBtn.addEventListener("click", () => {
         document.querySelector(".curtain-right")
             .style.transform = "translateX(100%)";
 
-    });
-}
-
 // });
 
-if (musicToggle && weddingMusic) {
+
+});
+
 musicToggle.addEventListener("click", () => {
 
     if (weddingMusic.paused) {
@@ -324,13 +275,10 @@ musicToggle.addEventListener("click", () => {
     }
 
 });
-}
 
 setTimeout(() => {
 
-    if (musicToggle) {
-        musicToggle.style.opacity = "1";
-        musicToggle.style.pointerEvents = "auto";
-    }
+    musicToggle.style.opacity = "1";
+    musicToggle.style.pointerEvents = "auto";
 
 }, 2200);
