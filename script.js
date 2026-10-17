@@ -31,6 +31,8 @@ function setupInvitationOpening() {
         window.setTimeout(() => {
             openingScreen.classList.add("hide");
             mainContent.classList.remove("hidden");
+            document.documentElement.classList.remove("invitation-opening");
+            document.body.classList.remove("invitation-opening");
             document.body.style.overflow = "auto";
             window.scrollTo({ top: 0, behavior: "auto" });
         }, reducedMotion ? 80 : OPENING_DURATION);
@@ -194,13 +196,51 @@ function setupCurtainAndMusic() {
     }
 }
 
+function setupGuestBlessings() {
+    const blessingsForm = document.getElementById("blessingsForm");
+    const guestName = document.getElementById("guestName");
+    const guestBlessing = document.getElementById("guestBlessing");
+    const thanks = document.getElementById("blessingsThanks");
+
+    if (!blessingsForm || !guestName || !guestBlessing || !thanks) return;
+
+    blessingsForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const name = guestName.value.trim();
+        const blessing = guestBlessing.value.trim();
+        if (!name) return;
+
+        const message = [
+            "Assalamu Alaikum Musallam & Iman,",
+            "",
+            `My name is ${name}.`,
+            blessing || "Sending my heartfelt blessings and duas for your beautiful journey together.",
+            "",
+            "May Allah fill your marriage with love, mercy and barakah. Ameen."
+        ].join("\n");
+
+        thanks.textContent = `JazakAllahu Khair, ${name}. Your kind blessing means so much to us.`;
+        window.open(
+            `https://wa.me/919623480428?text=${encodeURIComponent(message)}`,
+            "_blank",
+            "noopener,noreferrer"
+        );
+    });
+}
+
 function initializeInvitation() {
     const openingScreen = document.getElementById("openingScreen");
-    if (openingScreen) document.body.style.overflow = "hidden";
+    if (openingScreen) {
+        document.documentElement.classList.add("invitation-opening");
+        document.body.classList.add("invitation-opening");
+        document.body.style.overflow = "hidden";
+    }
 
     setupInvitationOpening();
     setupCountdown();
     setupCurtainAndMusic();
+    setupGuestBlessings();
 }
 
 if (document.readyState === "loading") {
