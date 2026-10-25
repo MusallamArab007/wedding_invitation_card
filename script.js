@@ -7,6 +7,13 @@ const OPENING_DURATION = 2900;
 const CURTAIN_DURATION = 1800;
 const MUSIC_VOLUME = 0.7;
 
+function syncViewportHeight() {
+    document.documentElement.style.setProperty(
+        "--visible-viewport-height",
+        `${window.innerHeight}px`
+    );
+}
+
 function setText(id, value) {
     const element = document.getElementById(id);
     if (element) element.textContent = value;
@@ -287,6 +294,10 @@ function setupGuestBlessings() {
 }
 
 function initializeInvitation() {
+    syncViewportHeight();
+    window.addEventListener("resize", syncViewportHeight, { passive: true });
+    window.addEventListener("orientationchange", syncViewportHeight, { passive: true });
+
     const openingScreen = document.getElementById("openingScreen");
     if (openingScreen) {
         document.documentElement.classList.add("invitation-opening");
