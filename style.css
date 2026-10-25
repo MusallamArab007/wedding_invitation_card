@@ -2681,6 +2681,223 @@ body .hero-scroll {
 }
 
 /* =========================================================
+   FINAL HERO VIEWPORT SAFETY
+   Keeps the invitation composition centered without clipping
+   the scroll cue on short screens or narrow phones.
+   ========================================================= */
+body .hero {
+    box-sizing: border-box;
+    height: auto;
+    min-height: 100svh;
+    max-height: none;
+    padding: clamp(28px, 5vh, 54px) clamp(18px, 4vw, 30px);
+}
+
+body .hero-content {
+    width: min(760px, 92vw);
+    height: auto;
+    max-height: none;
+    margin: 0 auto;
+    padding: clamp(18px, 3vh, 32px) clamp(14px, 3vw, 24px);
+}
+
+body .hero-names {
+    margin: clamp(20px, 3.2vw, 30px) auto 18px;
+}
+
+body .hero-and {
+    margin: 13px 0;
+}
+
+body .hero-scroll {
+    margin-top: clamp(16px, 2.5vh, 25px) !important;
+}
+
+@media (max-width: 600px) {
+    body .hero {
+        min-height: 0 !important;
+        height: auto !important;
+        max-height: none !important;
+        padding: 22px 14px 28px !important;
+        justify-content: flex-start !important;
+    }
+
+    body .hero-frame {
+        inset: 8px !important;
+    }
+
+    body .hero-content {
+        width: min(100%, 410px) !important;
+        height: auto !important;
+        max-height: none !important;
+        padding: 17px 12px 8px !important;
+    }
+
+    body .hero-ornament {
+        margin-bottom: 8px;
+    }
+
+    body .hero-bismillah {
+        margin-bottom: 9px;
+    }
+
+    body .hero-names {
+        margin: 17px auto 13px;
+    }
+
+    body .hero-and {
+        margin: 8px 0;
+    }
+
+    body .hero-date {
+        margin-bottom: 12px;
+    }
+
+    body .hero-divider {
+        margin: 16px auto 12px;
+    }
+
+    body .hero-scroll {
+        margin-top: 15px !important;
+    }
+
+    body .scroll-line {
+        height: 14px !important;
+    }
+
+    body .scroll-arrow {
+        display: none !important;
+    }
+}
+
+@media (max-width: 380px) {
+    body .hero {
+        padding-top: 16px !important;
+        padding-bottom: 22px !important;
+    }
+
+    body .hero-content {
+        padding-top: 13px !important;
+    }
+
+    body .hero-names {
+        margin-top: 13px;
+    }
+
+    body .hero-scroll {
+        margin-top: 11px !important;
+    }
+}
+
+/* Desktop returns to a single, balanced invitation viewport. */
+@media (min-width: 601px) {
+    body .hero {
+        height: 100dvh;
+        min-height: 100dvh;
+        max-height: 100dvh;
+        padding: 18px 28px;
+        overflow: hidden;
+        justify-content: center;
+    }
+
+    body .hero-content {
+        width: min(820px, 92vw);
+        padding: 12px 24px;
+        transform: scale(.91);
+        transform-origin: center;
+    }
+
+    body .hero-scroll {
+        margin-top: 14px !important;
+    }
+
+    body .scroll-line {
+        height: 22px;
+    }
+}
+
+/* =========================================================
+   DESKTOP HERO — EDITORIAL INVITATION COMPOSITION
+   A deliberate centre panel removes empty space and restores
+   the presence expected from the first invitation view.
+   ========================================================= */
+@media (min-width: 601px) {
+    body .hero-content {
+        width: min(920px, 88vw);
+        padding: clamp(24px, 3.2vh, 38px) clamp(42px, 5vw, 72px);
+        transform: scale(.96);
+        background:
+            linear-gradient(90deg,
+                transparent 0%,
+                rgba(248, 245, 239, .035) 12%,
+                rgba(248, 245, 239, .075) 50%,
+                rgba(248, 245, 239, .035) 88%,
+                transparent 100%);
+        border-top: 1px solid rgba(216, 198, 155, .28);
+        border-bottom: 1px solid rgba(216, 198, 155, .2);
+        box-shadow: 0 24px 60px rgba(0, 0, 0, .1);
+    }
+
+    body .hero-ornament {
+        margin-bottom: 12px;
+    }
+
+    body .hero-bismillah {
+        margin-bottom: 12px;
+    }
+
+    body .hero-intro {
+        margin-bottom: 11px;
+    }
+
+    body .hero-subtitle {
+        max-width: 525px;
+        font-size: clamp(1.08rem, 1.35vw, 1.22rem);
+        line-height: 1.5;
+    }
+
+    body .hero-names {
+        margin: 27px auto 19px;
+    }
+
+    body .groom-name {
+        font-size: clamp(3.85rem, 5.2vw, 5.25rem);
+        letter-spacing: -.035em;
+    }
+
+    body .bride-name {
+        font-size: clamp(3.25rem, 4.35vw, 4.5rem);
+        letter-spacing: -.035em;
+    }
+
+    body .hero-and {
+        margin: 13px 0;
+    }
+
+    body .hero-date {
+        margin: 0 0 18px;
+        padding: 11px 31px;
+        background: rgba(7, 28, 23, .18);
+        border-color: rgba(226, 197, 131, .6);
+    }
+
+    body .hero-divider {
+        width: 74px;
+        margin: 16px auto 13px;
+    }
+
+    body .hero-message {
+        max-width: 450px;
+        font-size: 1.1rem;
+        line-height: 1.52;
+    }
+
+    body .hero-scroll {
+        margin-top: 17px !important;
+    }
+}
+
+/* =========================================================
    FINAL RESPONSIVE EXPERIENCE
    Viewport-safe opening screens and a more deliberate mobile
    rhythm for the invitation sections.
