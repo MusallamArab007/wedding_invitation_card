@@ -42,29 +42,46 @@
         line-height: 1.38 !important;
     }
 
-    html body .hero-names { width: 100% !important; margin: 16px auto 12px !important; }
+    html body .hero-names {
+        width: 100% !important;
+        margin: 18px auto 13px !important;
+    }
 
     html body .groom-name {
-        max-width: 340px !important;
+        max-width: 330px !important;
         margin: 0 auto !important;
-        font-size: clamp(2.15rem, 10.4vw, 3.05rem) !important;
-        line-height: .91 !important;
-        letter-spacing: -.035em !important;
+        font-size: clamp(2.25rem, 9.8vw, 2.85rem) !important;
+        font-weight: 400 !important;
+        line-height: .94 !important;
+        letter-spacing: -.025em !important;
+        -webkit-text-stroke: 0 !important;
+        text-shadow: 0 3px 18px rgba(0, 0, 0, .24) !important;
     }
 
     html body .bride-name {
-        max-width: 340px !important;
+        max-width: 330px !important;
         margin: 0 auto !important;
-        font-size: clamp(1.95rem, 9.5vw, 2.75rem) !important;
-        line-height: .93 !important;
-        letter-spacing: -.035em !important;
+        font-size: clamp(2rem, 8.8vw, 2.55rem) !important;
+        font-weight: 400 !important;
+        line-height: .96 !important;
+        letter-spacing: -.02em !important;
+        -webkit-text-stroke: 0 !important;
+        text-shadow: 0 3px 18px rgba(0, 0, 0, .24) !important;
     }
 
-    html body .hero-and { gap: 10px !important; margin: 8px 0 !important; }
+    html body .groom-name span,
+    html body .bride-name span {
+        display: block;
+    }
+
+    html body .groom-name span + span { margin-top: 2px; }
+    html body .bride-name span + span { margin-top: 3px; }
+
+    html body .hero-and { gap: 10px !important; margin: 10px 0 !important; }
     html body .hero-and span { width: 29px !important; }
     html body .hero-and b { font-size: 1.25rem !important; }
 
-    html body .hero-date { gap: 9px !important; margin: 0 0 12px !important; padding: 7px 18px !important; }
+    html body .hero-date { gap: 9px !important; margin: 0 0 13px !important; padding: 7px 18px !important; }
     html body .hero-day { font-size: 34px !important; }
     html body .hero-date strong { font-size: 8px !important; letter-spacing: 2.2px !important; }
     html body .hero-date small { font-size: 7px !important; letter-spacing: 1.6px !important; }
@@ -90,4 +107,10 @@
     html body .hero-names { margin: 13px auto 10px !important; }
     html body .hero-message { font-size: .8rem !important; }
     html body .hero-scroll { margin-top: 10px !important; }
+}
+
+/* Keep the desktop names as natural single lines. */
+@media (min-width: 601px) {
+    .groom-name span,
+    .bride-name span { display: contents; }
 }
