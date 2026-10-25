@@ -201,31 +201,88 @@ function setupGuestBlessings() {
     const guestName = document.getElementById("guestName");
     const guestBlessing = document.getElementById("guestBlessing");
     const thanks = document.getElementById("blessingsThanks");
+    const submitButton = blessingsForm?.querySelector("button[type='submit']");
+    const modal = document.getElementById("blessingsModal");
+    const modalCard = modal?.querySelector(".blessings-modal__card");
+    const modalGuestName = document.getElementById("blessingsGuestName");
+    const submissionTarget = document.getElementById("blessingsSubmissionTarget");
+    let lastFocusedElement = null;
 
-    if (!blessingsForm || !guestName || !guestBlessing || !thanks) return;
+    if (!blessingsForm || !guestName || !guestBlessing || !thanks || !submitButton) return;
 
-    blessingsForm.addEventListener("submit", (event) => {
+    function closeModal() {
+        if (!modal || modal.hidden) return;
+        modal.classList.remove("is-visible");
+        window.setTimeout(() => {
+            modal.hidden = true;
+            lastFocusedElement?.focus();
+        }, 220);
+    }
+
+    function openModal(name) {
+        if (!modal || !modalGuestName) return;
+        lastFocusedElement = document.activeElement;
+        modalGuestName.textContent = name;
+        modal.hidden = false;
+        requestAnimationFrame(() => modal.classList.add("is-visible"));
+        window.setTimeout(() => modalCard?.focus(), 40);
+    }
+
+    modal?.querySelectorAll("[data-blessings-close]").forEach((button) => {
+        button.addEventListener("click", closeModal);
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") closeModal();
+    });
+
+    blessingsForm.addEventListener("submit", async (event) => {
         event.preventDefault();
 
         const name = guestName.value.trim();
         const blessing = guestBlessing.value.trim();
         if (!name) return;
 
-        const message = [
-            "Assalamu Alaikum Musallam & Iman,",
-            "",
-            `My name is ${name}.`,
-            blessing || "Sending my heartfelt blessings and duas for your beautiful journey together.",
-            "",
-            "May Allah fill your marriage with love, mercy and barakah. Ameen."
-        ].join("\n");
+        const defaultButtonText = submitButton.textContent;
+        const googleFormUrl = blessingsForm.dataset.googleFormUrl;
+        const nameField = blessingsForm.dataset.nameField;
+        const blessingField = blessingsForm.dataset.blessingField;
+        if (!googleFormUrl || !nameField || !blessingField) return;
 
-        thanks.textContent = `JazakAllahu Khair, ${name}. Your kind blessing means so much to us.`;
-        window.open(
-            `https://wa.me/919623480428?text=${encodeURIComponent(message)}`,
-            "_blank",
-            "noopener,noreferrer"
-        );
+        submitButton.disabled = true;
+        submitButton.textContent = "Sending your blessing...";
+        blessingsForm.setAttribute("aria-busy", "true");
+        thanks.textContent = "";
+
+        try {
+            if (!submissionTarget) throw new Error("Submission target unavailable");
+
+            const backgroundForm = document.createElement("form");
+            backgroundForm.action = googleFormUrl;
+            backgroundForm.method = "POST";
+            backgroundForm.target = submissionTarget.name;
+
+            [[nameField, name], [blessingField, blessing]].forEach(([field, value]) => {
+                const input = document.createElement("input");
+                input.type = "hidden";
+                input.name = field;
+                input.value = value;
+                backgroundForm.append(input);
+            });
+
+            document.body.append(backgroundForm);
+            backgroundForm.submit();
+            window.setTimeout(() => backgroundForm.remove(), 0);
+
+            blessingsForm.reset();
+            openModal(name);
+        } catch (error) {
+            thanks.textContent = "Your blessing could not be sent just now. Please try again in a moment.";
+        } finally {
+            submitButton.disabled = false;
+            submitButton.textContent = defaultButtonText;
+            blessingsForm.removeAttribute("aria-busy");
+        }
     });
 }
 
