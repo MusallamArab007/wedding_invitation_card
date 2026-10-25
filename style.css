@@ -2802,10 +2802,10 @@ body .guest-blessings-section {
     position: relative;
     overflow: hidden;
     text-align: center;
-    color: #f8f5ef;
+    color: #29251f;
     background:
-        radial-gradient(ellipse at 50% 22%, rgba(70, 128, 106, .46), transparent 58%),
-        linear-gradient(135deg, #0b2821 0%, #153d32 52%, #0a241e 100%);
+        radial-gradient(ellipse at 50% 0%, rgba(216, 198, 155, .35), transparent 58%),
+        linear-gradient(145deg, #fbf8f1, #eee5d5);
 }
 
 body .guest-blessings-content {
@@ -2816,17 +2816,17 @@ body .guest-blessings-content {
 }
 
 body .guest-blessings-section .section-label {
-    color: #dfc481;
+    color: #a78343;
 }
 
 body .guest-blessings-section h2 {
-    color: #fff7e8;
+    color: #29251f;
 }
 
 body .guest-blessings-intro {
     max-width: 430px;
     margin: 20px auto 30px;
-    color: rgba(248, 245, 239, .78);
+    color: #665e52;
     font: italic 1.08rem/1.65 var(--serif);
 }
 
@@ -2837,9 +2837,9 @@ body .blessings-form {
     margin: 0 auto;
     padding: 30px;
     text-align: left;
-    border: 1px solid rgba(223, 196, 129, .38);
-    background: rgba(4, 25, 20, .24);
-    box-shadow: 0 22px 50px rgba(0, 0, 0, .16);
+    border: 1px solid rgba(182, 155, 98, .52);
+    background: #143229;
+    box-shadow: 0 18px 38px rgba(20, 50, 41, .16);
 }
 
 body .blessings-form label {
@@ -2916,8 +2916,177 @@ body .blessings-submit:hover {
 body .blessings-thanks {
     min-height: 24px;
     margin: 18px auto 0;
-    color: #f2dda3;
+    color: #806331;
     font: italic 1.05rem/1.5 var(--serif);
+}
+
+body .blessings-submission-target {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    border: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+body .blessings-submit:disabled {
+    cursor: wait;
+    opacity: .72;
+    transform: none;
+}
+
+body .blessings-modal {
+    position: fixed;
+    z-index: 100000;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+}
+
+body .blessings-modal[hidden] {
+    display: none;
+}
+
+body .blessings-modal__backdrop {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    background: rgba(4, 22, 18, .74);
+    backdrop-filter: blur(8px);
+    transition: opacity .22s ease;
+}
+
+body .blessings-modal__card {
+    position: relative;
+    z-index: 1;
+    width: min(100%, 470px);
+    padding: 48px 42px 38px;
+    overflow: hidden;
+    text-align: center;
+    color: #f8f2e5;
+    opacity: 0;
+    transform: translateY(18px) scale(.96);
+    border: 1px solid rgba(223, 196, 129, .72);
+    background:
+        radial-gradient(circle at 50% 0%, rgba(203, 170, 97, .18), transparent 48%),
+        linear-gradient(145deg, #1c5042, #0b2821 72%);
+    box-shadow: 0 28px 80px rgba(0, 0, 0, .42), inset 0 0 0 8px rgba(223, 196, 129, .05);
+    transition: opacity .28s ease, transform .34s cubic-bezier(.22,.61,.36,1);
+}
+
+body .blessings-modal__card::before {
+    content: "";
+    position: absolute;
+    inset: 9px;
+    border: 1px solid rgba(223, 196, 129, .22);
+    pointer-events: none;
+}
+
+body .blessings-modal.is-visible .blessings-modal__backdrop {
+    opacity: 1;
+}
+
+body .blessings-modal.is-visible .blessings-modal__card {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+body .blessings-modal__close {
+    position: absolute;
+    z-index: 1;
+    top: 13px;
+    right: 15px;
+    width: 34px;
+    height: 34px;
+    border: 0;
+    color: #e8d8af;
+    background: transparent;
+    cursor: pointer;
+    font: 300 30px/1 var(--serif);
+}
+
+body .blessings-modal__ornament {
+    margin-bottom: 11px;
+    color: #dfc481;
+    font-size: 20px;
+    animation: blessingsSpark 2.6s ease-in-out infinite;
+}
+
+body .blessings-modal__eyebrow {
+    color: #dfc481;
+    font: 600 8px Montserrat, sans-serif;
+    letter-spacing: 3.2px;
+}
+
+body .blessings-modal h2 {
+    margin: 14px auto 0;
+    color: #fff7e8;
+    font: 500 clamp(2.4rem, 8vw, 3.35rem)/.98 var(--serif);
+}
+
+body .blessings-modal h2 span {
+    display: block;
+    margin-top: 5px;
+    color: #dfc481;
+}
+
+body .blessings-modal__divider {
+    width: 54px;
+    height: 1px;
+    margin: 23px auto 20px;
+    background: #dfc481;
+}
+
+body .blessings-modal__card > p:not(.blessings-modal__ornament):not(.blessings-modal__eyebrow):not(.blessings-modal__dua) {
+    max-width: 340px;
+    margin-inline: auto;
+    color: rgba(248, 245, 239, .82);
+    font: italic 1.08rem/1.6 var(--serif);
+}
+
+body .blessings-modal__dua {
+    margin-top: 18px;
+    color: #e7cf94;
+    font: italic 1.35rem var(--serif);
+}
+
+body .blessings-modal__done {
+    min-width: 148px;
+    min-height: 43px;
+    margin-top: 26px;
+    border: 1px solid #dfc481;
+    color: #143229;
+    background: #dfc481;
+    cursor: pointer;
+    font: 600 9px Montserrat, sans-serif;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    transition: transform .2s ease, background .2s ease, color .2s ease;
+}
+
+body .blessings-modal__done:hover {
+    transform: translateY(-2px);
+    color: #fff7e8;
+    background: transparent;
+}
+
+@keyframes blessingsSpark {
+    0%, 100% { opacity: .55; transform: scale(.85) rotate(0); }
+    50% { opacity: 1; transform: scale(1.16) rotate(15deg); }
+}
+
+@media (max-width: 600px) {
+    body .blessings-modal { padding: 18px; }
+    body .blessings-modal__card { padding: 43px 25px 32px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body .blessings-modal *,
+    body .blessings-modal__backdrop {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
 }
 
 /* Keep the hero concise on phones and create a lighter pause before the venues. */
