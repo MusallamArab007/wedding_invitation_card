@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="Wedding invitation of Musallam">
+          content="Wedding invitation of Musallam and Iman">
 
     <title>Musallam's | Wedding Invitation</title>
 
@@ -235,7 +235,7 @@
         <div class="mobile-couple-frame" aria-hidden="true">
             <img class="opening-image"
                 src="images/phot-frame2.jpg" 
-                alt="M & I"
+                alt="Musallam and Iman"
                 loading="lazy"
             >
         </div>
@@ -636,7 +636,7 @@
 
 
     <p class="countdown-bottom">
-        We Cannot wait to see you their
+        We can't wait to see you there.
     </p>
 
 </section>
@@ -804,7 +804,13 @@
                     gift as we begin this new chapter together.
                 </p>
 
-                <form class="blessings-form" id="blessingsForm">
+                <form
+                    class="blessings-form"
+                    id="blessingsForm"
+                    data-google-form-url="https://docs.google.com/forms/d/e/1FAIpQLSc4noqlPKvrF3YEneQZMGncdZXOKaYXCAD2m5C_YU0VmNOAhQ/formResponse"
+                    data-name-field="entry.1394824593"
+                    data-blessing-field="entry.2007139774"
+                >
                     <label for="guestName">Your name</label>
                     <input
                         id="guestName"
@@ -829,6 +835,14 @@
                 </form>
 
                 <p class="blessings-thanks" id="blessingsThanks" aria-live="polite"></p>
+                <iframe
+                    class="blessings-submission-target"
+                    id="blessingsSubmissionTarget"
+                    name="blessingsSubmissionTarget"
+                    title="Background blessing submission"
+                    aria-hidden="true"
+                    tabindex="-1"
+                ></iframe>
 
             </div>
 
@@ -952,6 +966,29 @@
         </footer>
 
     </main>
+
+    <div
+        class="blessings-modal"
+        id="blessingsModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="blessingsModalTitle"
+        hidden
+    >
+        <div class="blessings-modal__backdrop" data-blessings-close></div>
+        <article class="blessings-modal__card" tabindex="-1">
+            <button class="blessings-modal__close" type="button" aria-label="Close thank you message" data-blessings-close>
+                &times;
+            </button>
+            <p class="blessings-modal__ornament" aria-hidden="true">&#10022;</p>
+            <p class="blessings-modal__eyebrow">WITH GRATITUDE</p>
+            <h2 id="blessingsModalTitle">Thank you, <span id="blessingsGuestName"></span></h2>
+            <div class="blessings-modal__divider" aria-hidden="true"></div>
+            <p>Your beautiful blessing has reached us and will be treasured as we begin this new chapter together.</p>
+            <p class="blessings-modal__dua">JazakAllahu Khair</p>
+            <button class="blessings-modal__done" type="button" data-blessings-close>With love</button>
+        </article>
+    </div>
 
     <button id="musicToggle" class="music-toggle" aria-label="Toggle music">
         ♪
