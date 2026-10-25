@@ -2681,6 +2681,114 @@ body .hero-scroll {
 }
 
 /* =========================================================
+   FINAL MOBILE HERO — REAL DEVICE FIT
+   This is intentionally last: it keeps the complete first
+   invitation view compact on small phones despite older rules.
+   ========================================================= */
+@media (max-width: 600px) {
+    html body .hero {
+        height: auto !important;
+        min-height: 0 !important;
+        max-height: none !important;
+        padding: 18px 13px 24px !important;
+        justify-content: flex-start !important;
+    }
+
+    html body .hero-frame {
+        inset: 8px !important;
+    }
+
+    html body .hero-content {
+        width: min(100%, 390px) !important;
+        height: auto !important;
+        min-height: 0 !important;
+        max-height: none !important;
+        padding: 15px 10px 8px !important;
+        transform: none !important;
+    }
+
+    html body .hero-ornament { margin-bottom: 6px !important; }
+    html body .hero-bismillah {
+        margin-bottom: 8px !important;
+        font-size: clamp(14px, 4.4vw, 17px) !important;
+    }
+
+    html body .hero-intro {
+        margin: 0 0 8px !important;
+        font-size: 7px !important;
+        letter-spacing: 2.2px !important;
+    }
+
+    html body .hero-subtitle {
+        max-width: 310px !important;
+        margin: 0 auto !important;
+        font-size: clamp(.88rem, 3.6vw, 1rem) !important;
+        line-height: 1.38 !important;
+    }
+
+    html body .hero-names {
+        width: 100% !important;
+        margin: 16px auto 12px !important;
+    }
+
+    html body .groom-name {
+        max-width: 340px !important;
+        margin: 0 auto !important;
+        font-size: clamp(2.15rem, 10.4vw, 3.05rem) !important;
+        line-height: .91 !important;
+        letter-spacing: -.035em !important;
+    }
+
+    html body .bride-name {
+        max-width: 340px !important;
+        margin: 0 auto !important;
+        font-size: clamp(1.95rem, 9.5vw, 2.75rem) !important;
+        line-height: .93 !important;
+        letter-spacing: -.035em !important;
+    }
+
+    html body .hero-and {
+        gap: 10px !important;
+        margin: 8px 0 !important;
+    }
+
+    html body .hero-and span { width: 29px !important; }
+    html body .hero-and b { font-size: 1.25rem !important; }
+
+    html body .hero-date {
+        gap: 9px !important;
+        margin: 0 0 12px !important;
+        padding: 7px 18px !important;
+    }
+
+    html body .hero-day { font-size: 34px !important; }
+    html body .hero-date strong { font-size: 8px !important; letter-spacing: 2.2px !important; }
+    html body .hero-date small { font-size: 7px !important; letter-spacing: 1.6px !important; }
+    html body .hero-divider { width: 54px !important; margin: 13px auto 10px !important; }
+
+    html body .hero-message {
+        max-width: 290px !important;
+        font-size: clamp(.82rem, 3.4vw, .96rem) !important;
+        line-height: 1.42 !important;
+    }
+
+    html body .hero-scroll { margin-top: 13px !important; }
+    html body .hero-scroll span { font-size: 7px !important; letter-spacing: 2px !important; }
+    html body .scroll-line { height: 11px !important; margin-top: 6px !important; }
+    html body .scroll-arrow { display: none !important; }
+}
+
+@media (max-width: 380px) {
+    html body .hero { padding: 14px 10px 20px !important; }
+    html body .hero-content { padding: 12px 7px 6px !important; }
+    html body .groom-name { font-size: clamp(1.9rem, 10vw, 2.35rem) !important; }
+    html body .bride-name { font-size: clamp(1.72rem, 9vw, 2.15rem) !important; }
+    html body .hero-names { margin: 13px auto 10px !important; }
+    html body .hero-message { font-size: .8rem !important; }
+    html body .hero-scroll { margin-top: 10px !important; }
+}
+
+/* =========================================================
    FINAL HERO VIEWPORT SAFETY
    Keeps the invitation composition centered without clipping
    the scroll cue on short screens or narrow phones.
