@@ -83,6 +83,7 @@ function setupCurtainAndMusic() {
 
     function setMusicState(isPlaying) {
         musicToggle?.classList.toggle("playing", isPlaying);
+        if (isPlaying) musicToggle?.classList.add("is-visible");
     }
 
     function playMusic() {
@@ -133,10 +134,6 @@ function setupCurtainAndMusic() {
             }
         });
 
-        window.setTimeout(() => {
-            musicToggle.style.opacity = "1";
-            musicToggle.style.pointerEvents = "auto";
-        }, 2200);
     }
 }
 
