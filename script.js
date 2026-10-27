@@ -70,69 +70,6 @@ function setupCountdown() {
 
     updateCountdown();
     window.setInterval(updateCountdown, 1000);
-    setupDateReveal(weddingDate);
-}
-
-function setupDateReveal(weddingDate) {
-    const revealButton = document.getElementById("revealDateButton");
-    const dateReveal = document.getElementById("dateReveal");
-    const calendarButton = document.getElementById("addToCalendar");
-
-    if (!revealButton || !dateReveal) return;
-
-    setText("revealedDay", weddingDate.getDate());
-    setText(
-        "revealedMonth",
-        weddingDate.toLocaleDateString("en-US", { month: "long" }).toUpperCase()
-    );
-    setText(
-        "revealedYearDay",
-        `${weddingDate.getFullYear()} • ${weddingDate
-            .toLocaleDateString("en-US", { weekday: "long" })
-            .toUpperCase()}`
-    );
-
-    revealButton.addEventListener("click", () => {
-        dateReveal.classList.add("is-revealed");
-        revealButton.setAttribute("aria-expanded", "true");
-        revealButton.disabled = true;
-        if (calendarButton) calendarButton.disabled = false;
-    }, { once: true });
-
-    if (calendarButton) {
-        calendarButton.addEventListener("click", () => {
-            const eventEnd = new Date(weddingDate.getTime() + 3 * 60 * 60 * 1000);
-            const formatCalendarDate = (date) => [
-                date.getFullYear(),
-                String(date.getMonth() + 1).padStart(2, "0"),
-                String(date.getDate()).padStart(2, "0")
-            ].join("") + "T" + [
-                String(date.getHours()).padStart(2, "0"),
-                String(date.getMinutes()).padStart(2, "0"),
-                "00"
-            ].join("");
-            const calendarFile = [
-                "BEGIN:VCALENDAR",
-                "VERSION:2.0",
-                "BEGIN:VEVENT",
-                `DTSTART:${formatCalendarDate(weddingDate)}`,
-                `DTEND:${formatCalendarDate(eventEnd)}`,
-                "SUMMARY:Musallam's Nikah",
-                "LOCATION:Mohammadiya Masjid, Aurangabad",
-                "DESCRIPTION:With the blessings of Allah.",
-                "END:VEVENT",
-                "END:VCALENDAR"
-            ].join("\r\n");
-
-            const download = document.createElement("a");
-            download.href = URL.createObjectURL(
-                new Blob([calendarFile], { type: "text/calendar" })
-            );
-            download.download = "musallam-iman-wedding.ics";
-            download.click();
-            URL.revokeObjectURL(download.href);
-        });
-    }
 }
 
 function setupCurtainAndMusic() {
