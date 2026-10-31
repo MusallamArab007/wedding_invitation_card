@@ -794,12 +794,7 @@ background:
         rgba(255, 250, 240, 0.94) 0%,
         rgba(248, 239, 220, 0.82) 42%,
         rgba(232, 215, 181, 0.58) 100%
-    ),
-    url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=85");
-
-background-size: cover;
-background-position: center;
-background-repeat: no-repeat;
+    );
 
     color: #29251f;
 
@@ -1138,7 +1133,7 @@ background-repeat: no-repeat;
    CARD CONTENT LAYER
    ========================================================= */
 
-.invitation-card > *:not(.luxury-frame):not(.frame-glow) {
+.invitation-card > *:not(.luxury-frame):not(.frame-glow):not(.couple-photo-bg):not(.card-corner):not(.card-bottom-ornament) {
 
     position: relative;
 
@@ -1146,44 +1141,15 @@ background-repeat: no-repeat;
 
 }
 
-/* =========================================================
-   COUPLE PHOTO — BOTTOM OF INVITATION CARD
-========================================================= */
-
-.couple-photo-bg {
-
+.invitation-card .card-corner {
     position: absolute;
-
-    left: 0;
-    right: 0;
-    bottom: 0;
-
-    height: 48%;
-
-    z-index: 0;
-
-    background-image:
-        linear-gradient(
-            to bottom,
-            rgba(248, 245, 239, 1) 0%,
-            rgba(248, 245, 239, 0.92) 14%,
-            rgba(248, 245, 239, 0.55) 35%,
-            rgba(248, 245, 239, 0.18) 65%,
-            rgba(248, 245, 239, 0.05) 100%
-        ),
-        url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=85");
-
-    background-size: cover;
-
-    background-position: center 35%;
-
-    background-repeat: no-repeat;
-
-    opacity: 0.9;
-
+    z-index: 5;
     pointer-events: none;
 }
 
+/* =========================================================
+   COUPLE PHOTO — BOTTOM OF INVITATION CARD
+========================================================= */
 
 .card-corner.bottom-left {
 
@@ -6747,37 +6713,9 @@ footer .copyright {
     }
 }
 
-/* =========================================================
-   COUPLE PHOTO BACKGROUND
-========================================================= */
-
+/* The portrait is shown in its dedicated frame, not as a card background. */
 .couple-photo-bg {
-
-    position: absolute;
-
-    inset: 0;
-
-    z-index: 0;
-
-    background-image:
-        linear-gradient(
-            to bottom,
-            rgba(255, 250, 240, 0.96) 0%,
-            rgba(255, 250, 240, 0.90) 32%,
-            rgba(255, 250, 240, 0.58) 55%,
-            rgba(232, 215, 181, 0.18) 100%
-        ),
-        url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=85");
-
-    background-size: cover;
-
-    background-position: center;
-
-    background-repeat: no-repeat;
-
-    pointer-events: none;
-
-    opacity: 0.95;
+    display: none;
 }
 
 /* Soft readability layer over the photograph */
