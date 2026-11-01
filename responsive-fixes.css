@@ -640,23 +640,18 @@ html body .hero-crescent {
 
 html body .hero-names {
     position: relative !important;
-    width: min(570px, 86%) !important;
-    margin: 5px auto 12px !important;
-    padding: 24px 24px 21px !important;
-    border: 1px solid rgba(215, 180, 95, .9) !important;
-    border-radius: 48% 48% 42% 42% / 25% 25% 19% 19% !important;
-    background:
-        radial-gradient(ellipse at 50% 42%, rgba(61, 104, 78, .42), rgba(7, 37, 28, .9) 72%) !important;
-    box-shadow: 0 0 0 5px rgba(215, 180, 95, .055), inset 0 0 24px rgba(215, 180, 95, .08) !important;
+    width: min(760px, 92%) !important;
+    margin: 10px auto 16px !important;
+    padding: 5px 16px 8px !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
 }
 
 html body .hero-names::after {
-    position: absolute !important;
-    inset: 7px !important;
-    border: 1px solid rgba(215, 180, 95, .27) !important;
-    border-radius: inherit !important;
-    content: "" !important;
-    pointer-events: none !important;
+    display: none !important;
+    content: none !important;
 }
 
 html body .groom-name,
@@ -664,13 +659,13 @@ html body .bride-name {
     position: relative !important;
     z-index: 1 !important;
     max-width: 100% !important;
-    color: #f0d99c !important;
+    color: #f5f0e4 !important;
     font-family: var(--serif) !important;
     font-size: clamp(1.8rem, 3.2vw, 2.55rem) !important;
     font-weight: 500 !important;
-    letter-spacing: .045em !important;
-    line-height: .96 !important;
-    text-shadow: 0 2px 12px rgba(0, 0, 0, .34) !important;
+    letter-spacing: .015em !important;
+    line-height: 1 !important;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, .32) !important;
 }
 
 html body .hero-and {
@@ -680,8 +675,16 @@ html body .hero-and {
 }
 
 html body .hero-and b {
-    color: #d8b15d !important;
+    color: #d8b76e !important;
     font-family: var(--serif) !important;
+}
+
+html body .hero-and span {
+    background: linear-gradient(90deg, transparent, rgba(216, 183, 110, .72)) !important;
+}
+
+html body .hero-and span:last-child {
+    background: linear-gradient(90deg, rgba(216, 183, 110, .72), transparent) !important;
 }
 
 html body .hero-ceremony {
