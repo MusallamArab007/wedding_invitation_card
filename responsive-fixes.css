@@ -978,3 +978,42 @@ html body .hero-scroll span {
         scale: .88 !important;
     }
 }
+
+/* Keep the invitation framed without the heavy ornamental border treatment. */
+.opening-screen .outer-frame-line {
+    border: 1px solid rgba(215, 180, 95, .34) !important;
+    box-shadow: none !important;
+    background: none !important;
+}
+
+.opening-screen .outer-frame-line::before,
+.opening-screen .outer-frame-line::after {
+    display: none !important;
+    content: none !important;
+    animation: none !important;
+}
+
+.opening-screen .outer-corner,
+.opening-screen .outer-side-ornament {
+    display: none !important;
+    animation: none !important;
+}
+
+html body .hero-frame {
+    inset: 18px !important;
+    border: 1px solid rgba(215, 180, 95, .38) !important;
+    box-shadow: none !important;
+    background: none !important;
+}
+
+html body .hero-frame::before,
+html body .hero-frame::after {
+    display: none !important;
+    content: none !important;
+}
+
+@media (max-width: 600px) {
+    html body .hero-frame {
+        inset: 8px !important;
+    }
+}
